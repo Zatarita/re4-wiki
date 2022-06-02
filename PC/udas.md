@@ -5,7 +5,7 @@ The udas is the primary [container](https://en.wikipedia.org/wiki/Container_form
 {TODO:Flesh out the summary more}
 
 # Structure
-The file consists of a header and a body. The header acts a glossary that contains the metadata for all the data. Like a glossary in a book that has chapters and pages; the header contains the offsets and size of the data. This helps us navigate the body of the file. The header also contains the format of the sub-file. This lets us know how to interpret the data. Such as if the file is snd, dat, etc. Typically an UDAS consists of a [DAT](dat.md) file and a [SND](snd.md) file.<sup>[testing needed](https://github.com/Zatarita/re4-wiki/issues/new?title=update-UDAS_Padding_Requirement)</sup>
+The file consists of a header and a body. The header acts a glossary that contains the metadata for all the data. Like a glossary in a book that has chapters and pages; the header contains the offsets and size of the data. This helps us navigate the body of the file. The header also contains the format of the sub-file. This lets us know how to interpret the data. Such as if the file is snd, dat, etc. Typically an UDAS consists of a [DAT](dat.md) file and a [SND](snd.md) file.<sup>[testing needed](https://github.com/Zatarita/re4-wiki/issues/new?title=update-UDAS_SubFile_Supported_Types)</sup>
 
 Breaking down the structure of the file results in:
 
