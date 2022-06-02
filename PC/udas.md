@@ -5,7 +5,7 @@ The udas is the primary [container](https://en.wikipedia.org/wiki/Container_form
 {TODO:Flesh out the summary more}
 
 # Structure
-The file consists of a header and a body. The header acts a glossary that contains the metadata for all the data. Like a glossary in a book that has chapters and pages. The header also contains the offset, and size of the data. This helps us navigate the body of the file. The header also gives us information about how to interpret the data. Such as if the file is sound, models, animations, textures, etc. Typically an UDAS consists of a [DAT](dat.md) file and a [SND](snd.md) file.
+The file consists of a header and a body. The header acts a glossary that contains the metadata for all the data. Like a glossary in a book that has chapters and pages; the header contains the offsets and size of the data. This helps us navigate the body of the file. The header also contains the extension of the sub-file. This lets us know how to interpret the data. Such as if the file is sound, models, animations, textures, etc. Typically an UDAS consists of a [DAT](dat.md) file and a [SND](snd.md) file.
 
 Breaking down the structure of the file results in:
 
