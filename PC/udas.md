@@ -9,33 +9,34 @@ The file consists of a header and a body. The header acts a glossary that contai
 
 Breaking down the structure of the file results in:
 
+*Example r106.udas*<br>
+![Udas Header Hex](images/UDAS_header_hex.png)
 ```c
 struct HeaderEntry
 {
     enum FileType
     {
-        END = 0xFFFFFFFF, // -1
+        END = 0xFFFFFFFF,   // -1
         DAT = 0x0,
         SND = 0x4,
     }
 
-    FileType type;
-    int      size;
-    int      unknown;
-    int      offset;
-    int      padding[4];
+    FileType type;                  // Blue
+    int      size;                  // Red
+    int      unknown;               // Grey
+    int      offset;                // Yellow
+    int      unused[4];             // Grey
 }
 
 struct Header
 {
-    int         Magic[8];
+    int         Magic[8];           // Green. Always 0xCAB6BE20 8 times
     HeaderEntry SubFileMetadata[];
     byte        padding[0x400];
 }
 ```
 
 When editing the file programatically there are a few things to keep in mind.
-* The magic can be used to denote the endianness of the file. (little = 0xCAB6BE20; big = 0x20BEB6CA)
 * The amount of subfiles in the container is dynamic. The header is read until a FileType of 0xFFFFFFFF is read from the stream. After that there is 0x400 bytes of padding. It is unknown if the padding is required here.<sup>[testing needed](https://github.com/Zatarita/re4-wiki/issues/new?title=update-UDAS_Padding_Requirement)</sup>
 * All offsets in the file are aligned to the nearest 0x20 offset boundary. It is unknown if this is a requirement or optimization. <sup>[testing needed](https://github.com/Zatarita/re4-wiki/issues/new?title=update-UDAS_Alignment_Requirement)</sup>
 
