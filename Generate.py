@@ -22,11 +22,13 @@ def main():
 def getFilenames():
     files = []
     for(dir, _, filenames) in os.walk(os.curdir):
-        test = dir[2:]
         if dir[2:].startswith((outputPath[:-1], todoOutPath[:-1], ".git")):
             continue
 
         for filename in filenames:
+            if filename == "readme.md":
+                continue
+            
             if filename.endswith(".md"):
                 files.append(dir[2:] + "/" + filename)
     return files
