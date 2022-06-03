@@ -40,6 +40,6 @@ When editing the file programatically there are a few things to keep in mind.
 * The amount of subfiles in the container is dynamic. The header is read until a FileType of 0xFFFFFFFF is read from the stream. After that there is 0x400 bytes of padding. It is unknown if the padding is required here.<sup>[testing needed](https://github.com/Zatarita/re4-wiki/issues/new?title=update-UDAS_Padding_Requirement)</sup>
 * All offsets in the file are aligned to the nearest 0x20 offset boundary. It is unknown if this is a requirement or optimization. <sup>[testing needed](https://github.com/Zatarita/re4-wiki/issues/new?title=update-UDAS_Alignment_Requirement)</sup>
 
-{TODO: Testing Needed: Padding Requirement}
-{TODO: Testing Needed: Alignment Requirement}
+{Testing Needed: Padding Requirement}
+{Testing Needed: Alignment Requirement}
 {TODO: Figure out unknown}
