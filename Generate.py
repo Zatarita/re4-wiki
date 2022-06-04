@@ -11,11 +11,13 @@ outputPath  = "Final/"
 todoOutPath = "Todo/"
 
 def main():
-    for file in getFilenames():
+    files = getFilenames()
+    for file in files:
         fileText                         = open(file, "r").read()
         bracketExpressions, strippedText = isolateBracketExpressions(fileText)
         todo, additionalInfo             = processBracketExpressions(bracketExpressions)
         writeFinalText(file, strippedText, todo, additionalInfo)
+    createTodoMain(files)
     copyBinary("PC/archive")
     copyBinary("PC/images")
     
@@ -38,7 +40,6 @@ def isolateBracketExpressions(string : str):
     bracketExpressions = re.findall(bracketRegEx, string)
     return (bracketExpressions, re.sub(bracketRegEx, "", string))
 
-
 def processBracketExpressions(strings : list):
     todo = []
     additional = []
@@ -52,19 +53,20 @@ def processBracketExpressions(strings : list):
 def writeFinalText(path : str, body : str, todo : list, additionalInfo : list):
     createFilePath(f"{outputPath}{path}")
     open(f"{outputPath}{path}", "w").write(body)
-    
-    if len(todo) > 0:
-        createFilePath(f"{todoOutPath}{path}")
 
-        with open(f"{todoOutPath}{path}", "w") as todoOut:
-            todoOut.write(os.path.basename(path)[0:-3] + " Todo:<br>\n")
-            for line in todo:
-                todoOut.write(f"* {line}\n")
+    createFilePath(f"{todoOutPath}{path}")
 
-            if len(additionalInfo) > 0:
-                todoOut.write(f"\n{os.path.basename(path)[0:-3]} Additional Info:<br>\n")
-                for line in additionalInfo:
-                    todoOut.write(f"* {line}<br>\n")
+    with open(f"{todoOutPath}{path}", "w") as todoOut:
+        todoOut.write(os.path.basename(path)[0:-3] + " Todo:<br>\n")
+        for line in todo:
+            todoOut.write(f"* {line}\n")
+
+        if len(additionalInfo) > 0:
+            todoOut.write(f"\n{os.path.basename(path)[0:-3]} Additional Info:<br>\n")
+            for line in additionalInfo:
+                todoOut.write(f"* {line}<br>\n")
+
+        todoOut.write("## [Todo Main](../main.md)<br>\n")
 
 def createFilePath(path : str):
     if not os.path.exists(os.path.dirname(path)):
@@ -76,5 +78,14 @@ def copyBinary(path : str):
     createFilePath(f"{outputPath}{path}")
 
     shutil.copytree(os.path.abspath(path), f"{outputPath}{path}")
+
+def createTodoMain(files : list):
+    todoMain = "Todo\main.md"
+    createFilePath(todoMain)
+    with open(todoMain, "w") as fileout:
+        fileout.write("# Todo Mainpage\n")
+        for file in files:
+            fileout.write(f"* [{os.path.basename(file)[:-3]}]({file})\n")
+        fileout.write("## [Main](../readme.md)<br>\n")
 
 main()
