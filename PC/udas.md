@@ -1,6 +1,6 @@
 # Udas
 
-The udas is the primary [container](https://en.wikipedia.org/wiki/Container_format_(computing)) used by the [pc port](main.md) of the game. It holds all the assets required for the game to function. Contained inside the udas are sub-files responsible for defining behaviour seen in a room. Utilizing some [tools](tools.md) we are able to access the content of these files and modify them. This is the primary workflow used for modding the game. 
+The udas is one of the [container formats](https://en.wikipedia.org/wiki/Container_format_(computing)) used by the [pc port](main.md) of the game. Utilizing some [tools](tools.md) we are able to access the content of these files and modify them. This is the primary workflow used for modding the game. 
 
 {TODO:Flesh out the summary more}
 
