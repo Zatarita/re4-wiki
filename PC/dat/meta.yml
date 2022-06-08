@@ -1,0 +1,17 @@
+type: Filetype
+name: dat
+out: PC/
+tag: Container
+version: ["PC - UHD", "PC - 2007", "ps2", "gamecube"]
+extension: [".dat", ".das"]
+dependencies: null
+
+tools: ["SoP - Toolset", "Mariokart64n - Udas Tool"]
+endianness: [little]
+
+image: null
+compression: [gca, yz2]
+structure: PC/dat/structure.yml
+body: [PC/dat/body.yml]
+
+references: [udas]

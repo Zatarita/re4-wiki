@@ -1,0 +1,10 @@
+title: Resident Evil 4 PC - UHD
+children:
+  Table:
+    text: |
+     * Udas<br>
+     * Dat<br>
+    references: {
+      Udas: udas.md,
+      Dat: dat.md
+    }

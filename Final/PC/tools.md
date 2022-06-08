@@ -1,34 +1,20 @@
 # Modding Tools
 
-
-
-## PC
-### [Son Of Persion tool set](archive/SoP%20-%20Toolset.zip)
- Essential kit for modding the game. Supports many different file formats.<br>
-* [AEV]()
-* [BIN]()
-* [DAT]()
-* [EFF]()
-* [ESE]()
-* [ETM]()
-* [ETS]()
-* [EVD]()
-* [FSE]()
-* [ITA]()
-* [ITM]()
-* [LIT]()
-* [SAR/EAR]()
-* [SAT/EAT]()
-* [SMD]()
-* [SMX]()
-* [UDAS]()
-
-### [MDT Tool](archive/MDT%20Tool.zip)
-Edits [MDT]() files for all languages that utilize the latin alphabet.
-> Note as of update 1.10 Traditional and Simplified Chinese were added to the game. These are unsupported by this tool.
-* English
-* French
-* German
-* Italian
-* Spanish
-
+## Son of Persia Tools
+ * [AEV](aev.md) 
+ * [BIN](bin.md) 
+ * [DAT](dat.md) 
+ * [EFF](eff.md) 
+ * [ESE](ese.md) 
+ * [ETM](etm.md) 
+ * [ETS](ets.md) 
+ * [EVD](evd.md) 
+ * [FSE](fse.md) 
+ * [ITA](ita.md) 
+ * [ITM](itm.md) 
+ * [LIT](lit.md) 
+ * [SAR/EAR](sar-ear.md) 
+ * [SAT/EAT](sat-eat.md) 
+ * [SMD](smd.md) 
+ * [SMX](smx.md) 
+ * [UDAS](udas.md) 

@@ -1,0 +1,20 @@
+title: Udas
+children:
+ Summary: 
+  text: >
+   The udas is one of the container formats used by the UHD Version of the game. It not only holds the assets required for a room to work, but it also contains files that define *how* the room works. 
+   Using various tools the udas can be modified. This allows modders to be able to adjust the behavior of a room or the game as a whole. This is the primary approach used for modding the game.<br>
+   The udas works by bundling together a DAT file with a SND file. The DAT file is *the* primary container format used by the game. The DAT conatined within the udas is the file that actually
+   contains majority of the game assets used by a particular room. The SND file (at least in this version of the game) helps link the room's soundbanks found inside the *BIO4/snd* folder to their respective
+   room. These two files work together to do majority of the heavy lifting.
+  references: {
+    container formats: https://en.wikipedia.org/wiki/Container_format_(computing),
+    UHD Version: ../Versions.md#Ultimate-HD(UHD),
+    tools: ../Tools.md,
+    DAT: dat.md,
+    SND: snd.md,
+    room: ../Room.md,
+    soundbanks: snd.md#Pc-Soundbanks
+  }
+ 
+ 

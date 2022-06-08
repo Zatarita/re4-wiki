@@ -1,0 +1,56 @@
+structure:
+ Header:
+  Magic:
+    type: array
+    subtype: int32_t
+    options: [0xCAB6BE20, 0x20BEB6CA]
+    comments: null
+    default: null
+    hex: True
+    size: 8
+
+  SubFileMetadata:
+    type: array
+    subtype: HeaderEntry
+    comments: Dynamically sized array. Read until an entry with Segment Type -1 is reached.
+    references: {
+      HeaderEntry: "#HeaderEntry"
+      }
+
+  Padding:
+    type: array
+    subtype: byte
+    comments: Header typically has anywhere from 0x3B0-0x400 bytes of padding after the last segment.
+    default: 0
+    hex: True
+    size: 0x400
+
+ HeaderEntry:
+  SegmentType:
+    type: enum
+    subtype: int32_t
+    options: {
+      "END": -1,
+      "DAT": 0,
+      "SND": 4
+    }
+    references: {
+      DAT: "dat.md",
+      SND: "snd.md"
+    }
+
+  Size:
+    type: uint32_t
+
+  Unknown:
+    type: uint32_t
+    default: 0
+
+  Offset:
+    type: uint32_t
+    
+  Unused:
+    type: array
+    subtype: uint32_t
+    default: [0, 0, 0, 0]
+    size: 4

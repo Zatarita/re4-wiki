@@ -1,0 +1,19 @@
+type: Filetype
+name: udas
+out: PC/
+tag: Container
+version: [PC]
+extension: [".udas"]
+dependencies: {
+  PC/udas/images/UDAS_header_hex.png : PC/images/UDAS_header_hex.png
+  }
+
+tools: ["SoP - Toolset", "Mariokart64n - Udas Tool"]
+endianness: [little]
+
+image: null
+compression: [lfs]
+structure: PC/udas/structure.yml
+body: [PC/udas/body.yml]
+
+references: [dat, snd]

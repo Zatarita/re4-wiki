@@ -1,0 +1,12 @@
+type: Page
+name: tools
+out: PC\
+dependencies: {
+  PC\tools\archive\MDT Tool.zip : PC\archive\MDT Tool.zip,
+  PC\tools\archive\SoP - Toolset.zip : PC\archive\SoP - Toolset.zip
+}
+last edit: 06/08/2022
+version: ["PC - UHD"]
+tag: [sop, son of persia, mdt tool, modding, mariokart64n]
+
+body: [PC/tools/body.yml]

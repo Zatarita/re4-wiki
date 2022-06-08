@@ -1,67 +1,18 @@
-# Dat
-The DAT File is the primary container format used to hold scene assets. Contained inside the DAT are sub-files responsible for defining behaviour seen in a room. These subfiles have many different uses ranging from models, to events. Utilizing some [tools](tools.md) we are able to access the content of these files and modify them. This is the primary workflow used for modding the game.
+# DAT
 
-DAT Files are used for many purposes from general purpose containers to containing all the data for a [room](). 
+## Summary
+ The DAT file is one of the primary [container formats](https://en.wikipedia.org/wiki/Container_format_(computing)) used by the game. Contained within the DAT files are other [subfiles](#subfiles). The content of the [subfiles](#subfiles) can vary from *visual* assets such as models or textures, to more *abstract* such as defining the functionality of the objects in the room. The DAT file has seen a few variations between versions; however, it is fairly ubiquitous and an important format. By modifying the [subfiles](#subfiles) inside of the DAT file we are able to change the behaviour of the game.
+## Subfiles
+There should be another section
+## Differences In Versions
+and another?
+## Structure
+### *Header*
 
-# Structure
-The file consists of a header and a body. The header acts a glossary that contains the metadata for all the data. Like a glossary in a book that has chapters and pages; the header contains the offsets pointing to the data. This helps us navigate the body of the file. The header also contains the extension of the sub-file. This lets us know how to interpret the data. Such as if the file is animation, model, or level geometry.
 
-The Structure of the file is as follows:
-![DAT File Header](images/DAT_header_hex.png)
-
-```c
-struct Header
-{
-    int  count;                 // Blue
-    int  padding[3];
-    int  offset[count];         // Green
-    char extension[4][count];   // Orange
-}
-```
-
-> All offsets in the file are aligned to the nearest 0x20 offset boundary. It is unknown if this is a requirement or optimization. <sup>[testing needed](https://github.com/Zatarita/re4-wiki/issues/new?title=update-DAT_Alignment_Requirement)</sup>
-
-# Subfiles
-Contained inside the DAT are other subfiles with their own functionality. Each of these files work together to create the functionality we see in game.
-
-[AEV]() - Room events <BR>
-[BIN]() - Models <BR>
-[BLK]() - <BR>
-[CAM]() - Cameras <BR>
-[CNS]() - <BR>
-[DCT]() - <BR>
-[DRA]() - <BR>
-[DSE]() - <BR>
-[EAR]() - <BR>
-[EAT]() - <BR>
-[EFF]() - <BR>
-[EMI]() - <BR>
-[ESE]() - <BR>
-[ESL]() - <BR>
-[ETM]() - <BR>
-[ETS]() - <BR>
-[EVD]() - <BR>
-[FCS]() - <BR>
-[FCV]() - <BR>
-[FNT]() - Font <BR>
-[ITA]() - <BR>
-[ITM]() - <BR>
-[LIT]() - Room Lights <BR>
-[MDT]() - Message Text <BR>
-[OSD]() - <BR>
-[RTP]() - <BR>
-[SAR]() - <BR>
-[SAT]() - Level Collision Geometry <BR>
-[SEQ]() - Sequence <BR>
-[SFD]() - <BR>
-[SHD]() - <BR>
-[SMD]() - <BR>
-[SMX]() - <BR>
-[SND]() - <BR>
-[STB]() - <BR>
-[TEX]() - <BR>
-[TPL]() - Texture <BR>
-[UWF]() - <BR>
-[VIB]() - <BR>
-[MHT]() - <BR>
-
+| Field | <span style="display: inline-block; width:150px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| :- | :- | :-: | :- | :- |
+| Count | uint32_t   |  |  | The amount of subfiles contained within the DAT. |
+| Padding | array : byte [12] |  |  |  |
+| Offsets | array : uint32_t [Count] |  |  | List of offsets pointing to the start of each chunk of data. |
+| Extensions | array : string [Count] | ['AEV', 'BIN', 'BLK', 'CAM', 'CNS', 'DCT', 'DRA', 'DSE', 'EAR', 'EAT', 'EFF', 'EMI', 'ESE', 'ESL', 'ETM', 'ETS', 'EVD', 'FCS', 'FCV', 'FNT', 'ITA', 'ITM', 'LIT', 'MDT', 'MHT', 'OSD', 'RTP', 'SAR', 'SAT', 'SEQ', 'SFD', 'SHD', 'SMD', 'SMX', 'SND', 'STB', 'TEX', 'TPL', 'UWF', 'VIB'] |  | Extension for the files. |

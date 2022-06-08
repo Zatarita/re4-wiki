@@ -1,0 +1,40 @@
+title: Modding Tools
+children:
+  Son of Persia Tools:
+    text: "
+     * AEV \n
+     * BIN \n
+     * DAT \n
+     * EFF \n
+     * ESE \n
+     * ETM \n
+     * ETS \n
+     * EVD \n
+     * FSE \n
+     * ITA \n
+     * ITM \n
+     * LIT \n
+     * SAR/EAR \n
+     * SAT/EAT \n
+     * SMD \n
+     * SMX \n
+     * UDAS \n"
+    references: {
+      AEV: aev.md,
+      BIN: bin.md,
+      DAT: dat.md,
+      EFF: eff.md,
+      ESE: ese.md,
+      ETM: etm.md,
+      ETS: ets.md,
+      EVD: evd.md,
+      FSE: fse.md,
+      ITA: ita.md,
+      ITM: itm.md,
+      LIT: lit.md,
+      SAR/EAR: sar-ear.md,
+      SAT/EAT: sat-eat.md,
+      SMD: smd.md,
+      SMX: smx.md,
+      UDAS: udas.md,
+    }

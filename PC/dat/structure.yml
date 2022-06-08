@@ -1,0 +1,24 @@
+structure:
+ Header:
+  Count:
+    type: uint32_t
+    comments: The amount of subfiles contained within the DAT.
+    
+  Padding:
+    type: array
+    subtype: byte
+    size: 12
+
+  Offsets:
+    type: array
+    subtype: uint32_t
+    comments: List of offsets pointing to the start of each chunk of data.
+    size: Count
+
+  Extensions:
+    type: array
+    subtype: string
+    options: [AEV, BIN, BLK, CAM, CNS, DCT, DRA, DSE, EAR, EAT, EFF, EMI, ESE, ESL, ETM, ETS, EVD, FCS, FCV, FNT, ITA, ITM, LIT, MDT, MHT, OSD, RTP, SAR, SAT, SEQ, SFD, SHD, SMD, SMX, SND, STB, TEX, TPL, UWF, VIB]
+    comments: Extension for the files.
+    size: Count
+
