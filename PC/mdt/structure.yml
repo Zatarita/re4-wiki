@@ -1,0 +1,74 @@
+structure:
+ Header:
+  Count:
+   type: uint32_t
+   comments: Count of how many languages are in the file. It is possible that this value does not equal 6. In that case The MDT only has one language inside of it and this will instead jump straight to the start of the MDT Langauge.
+   default: 6
+   references: {
+    MDT Langauge: "#mdt-language"
+   }
+  Offsets:
+   type: array
+   subtype: uint32_t
+   size: Count
+   comments: Offsets pointing to the start of each language.
+  Languages:
+   type: array
+   subtype: MDT Language
+   size: Count
+   comments: The actual languages themselves.
+   references: {
+    MDT Language: "#mdt-language"
+   }
+  Note:
+   type: ""
+   comments: The size of the array varries depending on version. For version 1.10+ the MDT has two extra offsets for Traditional and Simplified Chinese. These are just hacked onto the end, and the count is not adjusted to reflect that; however, Fixing the value causes the game to crash. For version 1.10 Count + 2 should be used.
+
+ MDT Language:
+  Unknown:
+   type: uint32_t
+   comments: Currently Unknown. Assumed vestigial data from console ports.
+  Count:
+   type: uint32_t
+   comments: Count of how many strings are inside this particular language.
+  Offsets:
+   type: array
+   subtype: uin32_t
+   comments: Offsets pointing to the start of each string.
+  Strings:
+   type: array
+   subtype: MDT String[n]
+   references: {
+      MDT String: "#mdt-string"
+   }
+
+ MDT String:
+  Characters:
+   type: array
+   subtype: short
+   comments: Each string starts and ends with a Start and End character respectively. Beyond that each short is either a special character, or a reference to a character defined in a FNT file. The lower 8 bits are reserved for special characters and the upper 8 bits (128+) are indexes into a FNT file.
+   options: {
+     Start: 0,
+     End: 1,
+     Insert: 2,
+     Newline: 3,
+     Newpage: 4,
+     Speed: 5,
+     Color: 6,
+     Option: 7,
+     Pause: 8,
+     Sleep: 9,
+     Quantity: 10,
+     Left Justify: 11,
+     Top Justify: 12,
+     Unknown: 13,
+     Return: 14,
+     Core: 15,
+     Last Pickup: 16,
+     Item: 17,
+     Character: 18,
+     Font Character: 128
+   }
+   references: {
+     FNT: font.md
+   }

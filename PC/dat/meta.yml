@@ -1,7 +1,7 @@
 type: Filetype
 name: dat
 out: PC/
-tag: Container
+tags: [Container]
 version: ["PC - UHD", "PC - 2007", "ps2", "gamecube"]
 extension: [".dat", ".das"]
 dependencies: null

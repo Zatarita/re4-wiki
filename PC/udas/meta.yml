@@ -1,7 +1,7 @@
 type: Filetype
 name: udas
 out: PC/
-tag: Container
+tags: [Container]
 version: [PC]
 extension: [".udas"]
 dependencies: {

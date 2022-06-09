@@ -1,0 +1,61 @@
+title: MDT File
+children:
+  Summary:
+    text: "
+     The MDT File is responsible for the text presented in message dialogs throughout the game. 
+     These text dialogs are typically triggered by an AEV event; however, other things can trigger 
+     MDTs such as cutscenes or a sequence. The MDT file can contain multiple languages inside of it.
+     Each language contains a list of encoded characters that represent the text that gets presented. 
+     These characters are determined by a font file. 
+     Some of these characters aren't printed, but instead control *how* the text gets presented. Such as
+     font color, or text justification.\n" 
+    references: {
+      AEV event: aev.md,
+      sequence: seq.md,
+      font file: fnt.md,
+    }
+    todo: [
+      "Update references 'AEV event' to link to 'AEV event -> Message Event' instead of root of page"
+    ]
+    #
+    #
+  Header:
+   text: "
+    A MDT File is a list of MDT Languages. The header consists of a count, offsets pointing to each language, 
+    and then the languages themselves. Majority of the time each MDT file contains
+    all the strings for each language in the game. This is not always the case though. There is a variation of the
+    MDT that only contains one language. These are typically found inside folders that denote their respective language. 
+    (eg *BIO4/SS/**eng***, *BIO4/SS/**jap***, etc)<br>\n
+    > On update 1.10 Traditional and Simplified Chinese was added to the game. This means that later versions of the
+    game have a slight altercation to the format. The update appended the two new MDT Languages to the end of the list 
+    **without** updating the count. You can determine if you have a new MDT by checking if the first offset instead of using the count<br>\n
+    0x1C: pre  1.10<br>\n
+    0x24: post 1.10<br>\n
+    > Attempting to correct the field has resulted in the game crashing.\n"
+   references: {
+     MDT Languages: "#mdt-language"
+   }
+  MDT Language:
+   text: "
+    The MDT Language is a list of strings. 
+    When working with the standard version of the MDT we see a similar structure to the header. We have a count
+    denoting how many strings there are, then the offsets, and the MDT Strings. The structure of the MDT Language
+    isn't fully mapped out yet though. There is an unknown at the beginning of the language that is suspected to be
+    vestigial from the console ports; however, this requires confirmation.\n"
+   references: {
+     MDT Strings: "#mdt-string",
+     this requires confirmation: "https://github.com/Zatarita/re4-wiki/issues/new?title=update-MDT-Unknown"
+   }
+  MDT String:
+   text: "
+    The MDT String is a list of 16-bit numbers. These numbers either control how the text gets presented to the screen,
+    or they *are* the characters that gets presented to screen. The highest 8-bits control which character gets grabbed
+    from the FNT file. This is the index used to grab the font character. The Lowest 8-bits are special characters.
+    There are only 18 of them; however, they control things such as the flow and presentation of the text.\n"
+   references: {
+    16-bit numbers: https://en.wikipedia.org/wiki/16-bit_computing,
+    special characters: "#special-characters",
+    FNT: fnt.md
+   }
+  Special Characters:
+   text: ""

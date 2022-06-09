@@ -4,6 +4,6 @@ out: PC\
 dependencies: null
 last edit: 06/06/2022
 version: ["PC - UHD"]
-tag: null
+tags: null
 
 body: [PC/main/body.yml]

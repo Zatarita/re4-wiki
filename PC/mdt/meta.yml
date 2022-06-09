@@ -1,0 +1,17 @@
+type: Filetype
+name: mdt
+out: PC/
+tags: [Message, Dialog, Text]
+version: [PC]
+extension: [".mdt"]
+dependencies: null
+
+tools: ["MDT Tool"]
+endianness: [little, big]
+
+image: null
+compression: null
+structure: PC/mdt/structure.yml
+body: [PC/mdt/body.yml]
+
+references: [dat]
