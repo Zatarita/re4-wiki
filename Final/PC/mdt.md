@@ -11,7 +11,7 @@
 ## MDT Language
  The MDT Language is a list of strings. When working with the standard version of the MDT we see a similar structure to the header. We have a count denoting how many strings there are, then the offsets, and the [MDT Strings](#mdt-string). The structure of the MDT Language isn't fully mapped out yet though. There is an unknown at the beginning of the language that is suspected to be vestigial from the console ports; however, [this requires confirmation](https://github.com/Zatarita/re4-wiki/issues/new?title=update-MDT-Unknown).
 ## MDT String
- The MDT String is a list of [16-bit numbers](https://en.wikipedia.org/wiki/16-bit_computing). These numbers either control how the text gets presented to the screen, or they *are* the characters that gets presented to screen. The highest 8-bits control which character gets grabbed from the [FNT](fnt.md) file. This is the index used to grab the font character. The Lowest 8-bits are [special characters](#special-characters). There are only 18 of them; however, they control things such as the flow and presentation of the text.
+ The MDT String is a list of [16-bit numbers](https://en.wikipedia.org/wiki/16-bit_computing). These numbers either control how the text gets presented to the screen, or they *are* the characters that gets presented to screen. The highest 8-bits is the index which gets grabbed from the [FNT](fnt.md) file. The Lowest 8-bits are [special characters](#special-characters). There are only 18 of them; however, they control things such as the flow and presentation of the text.
 
 ## Structure
 ### *Header*
@@ -30,11 +30,11 @@
 | :- | :- | :-: | :- | :- |
 | Unknown | uint32_t   |  |  | Currently Unknown. Assumed vestigial data from console ports. |
 | Count | uint32_t   |  |  | Count of how many strings are inside this particular language. |
-| Offsets | array : uin32_t  |  |  | Offsets pointing to the start of each string. |
-| Strings | array : [MDT String](#mdt-string)[n]  |  |  |  |
+| Offsets | array : uin32_t [Count] |  |  | Offsets pointing to the start of each string. |
+| Strings | array : [MDT String](#mdt-string)[Count]  |  |  |  |
 ### *MDT String*
 
 
 | Field | <span style="display: inline-block; width:150px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| Characters | array : short  | {Start: 0, End: 1, Insert: 2, Newline: 3, Newpage: 4, Speed: 5, Color: 6, Option: 7, Pause: 8, Sleep: 9, Quantity: 10, Left Justify: 11, Top Justify: 12, Unknown: 13, Return: 14, Core: 15, Last Pickup: 16, Item: 17, Character: 18, Font Character: 128, } |  | Each string starts and ends with a Start and End character respectively. Beyond that each short is either a special character, or a reference to a character defined in a [FNT](font.md) file. The lower 8 bits are reserved for special characters and the upper 8 bits (128+) are indexes into a [FNT](font.md) file. |
+| Characters | array : short [n] | {Start: 0, End: 1, Insert: 2, Newline: 3, Newpage: 4, Speed: 5, Color: 6, Option: 7, Pause: 8, Sleep: 9, Quantity: 10, Left Justify: 11, Top Justify: 12, Unknown: 13, Return: 14, Core: 15, Last Pickup: 16, Item: 17, Character: 18, Font Character: 128, } |  | Each string starts and ends with a Start and End character respectively. Beyond that each short is either a special character, or a reference to a character defined in a [FNT](font.md) file. The lower 8 bits are reserved for special characters and the upper 8 bits (128+) are indexes into a [FNT](font.md) file. |

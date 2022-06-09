@@ -49,9 +49,9 @@ children:
   MDT String:
    text: "
     The MDT String is a list of 16-bit numbers. These numbers either control how the text gets presented to the screen,
-    or they *are* the characters that gets presented to screen. The highest 8-bits control which character gets grabbed
-    from the FNT file. This is the index used to grab the font character. The Lowest 8-bits are special characters.
-    There are only 18 of them; however, they control things such as the flow and presentation of the text.\n"
+    or they *are* the characters that gets presented to screen. The highest 8-bits is the index which gets grabbed
+    from the FNT file. The Lowest 8-bits are special characters. There are only 18 of them; however, they control
+    things such as the flow and presentation of the text.\n"
    references: {
     16-bit numbers: https://en.wikipedia.org/wiki/16-bit_computing,
     special characters: "#special-characters",

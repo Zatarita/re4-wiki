@@ -35,9 +35,10 @@ structure:
    type: array
    subtype: uin32_t
    comments: Offsets pointing to the start of each string.
+   size: Count
   Strings:
    type: array
-   subtype: MDT String[n]
+   subtype: MDT String[Count]
    references: {
       MDT String: "#mdt-string"
    }
@@ -72,3 +73,4 @@ structure:
    references: {
      FNT: font.md
    }
+   size: "n"
