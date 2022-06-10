@@ -12,7 +12,6 @@ outputPath  = "Final/"
 todoOutPath = "Todo/"
 structureTableFormat = '\n| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |\n| :- | :- | :-: | :- | :- |'
 
-
 def createFilePath(path : str):
     if not os.path.exists(os.path.dirname(path)):
         os.makedirs(os.path.dirname(path))
@@ -25,14 +24,13 @@ def copyBinary(path : str, outpath : str):
     shutil.copy(os.path.abspath(path), os.path.abspath(outpath))
 
 def main():
-    print(getFilenames())
-    for file in getFilenames():
-        print(file)
+    filenames = getFilenames()
+    for file in filenames:
         if meta := loadMeta(file):
             parseMeta(meta)
         else:
             print(f"Unable to parse meta file: {file}")
-    
+
 def getFilenames():
     files = []
     for(dir, _, filenames) in os.walk(os.curdir):

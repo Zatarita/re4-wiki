@@ -21,7 +21,7 @@ structure:
     MDT Language: "#mdt-language-1"
    }
   Note:
-   type: ""
+   type: " "
    comments: The size of the array varries depending on version. For version 1.10+ the MDT has two extra offsets for Traditional and Simplified Chinese. These are just hacked onto the end, and the count is not adjusted to reflect that; however, Fixing the value causes the game to crash. For version 1.10 Count + 2 should be used.
 
  MDT Language:
