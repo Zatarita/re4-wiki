@@ -10,7 +10,7 @@ and another?
 ### *Header*
 
 
-| Field | <span style="display: inline-block; width:200px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | Count | uint32_t   |  |  | The amount of subfiles contained within the DAT. |
 | Padding | array : byte [12] |  |  |  |

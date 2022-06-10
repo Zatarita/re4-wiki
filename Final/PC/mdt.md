@@ -40,7 +40,7 @@
 ### *Header*
 
 
-| Field | <span style="display: inline-block; width:200px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | Count | uint32_t   |  | 6 | Count of how many languages are in the file. It is possible that this value does not equal 6. In that case The MDT only has one language inside of it and this will instead jump straight to the start of the [MDT Langauge](#mdt-language). |
 | Offsets | array : uint32_t [Count] |  |  | Offsets pointing to the start of each language. |
@@ -49,7 +49,7 @@
 ### *MDT Language*
 
 
-| Field | <span style="display: inline-block; width:200px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | Unknown | uint32_t   |  |  | Currently Unknown. Assumed vestigial data from console ports. |
 | Count | uint32_t   |  |  | Count of how many strings are inside this particular language. |
@@ -58,6 +58,6 @@
 ### *MDT String*
 
 
-| Field | <span style="display: inline-block; width:200px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | Characters | array : short [n] | {Start: 0, End: 1, Insert: 2, Newline: 3, Newpage: 4, Speed: 5, Color: 6, Option: 7, Pause: 8, Sleep: 9, Quantity: 10, Left Justify: 11, Top Justify: 12, Unknown: 13, Return: 14, Core: 15, Last Pickup: 16, Item: 17, Character: 18, Font Character: 128+, } |  | Each string starts and ends with a Start and End character respectively. Beyond that each short is either a special character, or a reference to a character defined in a [FNT](font.md) file. The lower 8 bits are reserved for special characters and the upper 8 bits (128+) are indexes into a [FNT](font.md) file. |

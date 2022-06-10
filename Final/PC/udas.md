@@ -7,7 +7,7 @@ The udas is one of the [container formats](https://en.wikipedia.org/wiki/Contain
 ### *Header*
 
 
-| Field | <span style="display: inline-block; width:200px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | Magic | array : int32_t [0x8] | [0xCAB6BE20, 0x20BEB6CA] |  |  |
 | SubFileMetadata | array : [HeaderEntry](#HeaderEntry)  |  |  | Dynamically sized array. Read until an entry with Segment Type -1 is reached. |
@@ -15,7 +15,7 @@ The udas is one of the [container formats](https://en.wikipedia.org/wiki/Contain
 ### *HeaderEntry*
 
 
-| Field | <span style="display: inline-block; width:200px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | SegmentType | enum : int32_t  | {END: -1, [DAT](dat.md): 0, [SND](snd.md): 4, } |  |  |
 | Size | uint32_t   |  |  |  |
