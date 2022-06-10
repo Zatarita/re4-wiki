@@ -4,7 +4,9 @@ children:
     text: |
      * Udas<br>
      * Dat<br>
+     * Mdt<br>
     references: {
       Udas: udas.md,
-      Dat: dat.md
+      Dat: dat.md,
+      Mdt: mdt.md
     }

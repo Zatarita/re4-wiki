@@ -1,4 +1,5 @@
 # MDT File
+<div  style="float:right; width: 400px; margin: 10px; background: #808080; box-shadow: 0px 0px 10px black;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 
 ## Summary
  The MDT File is responsible for the text presented in message dialogs throughout the game. These text dialogs are typically triggered by an [AEV event](aev.md); however, other things can trigger MDTs such as cutscenes or a [sequence](seq.md). The MDT file can contain multiple languages inside of it. Each language contains a list of encoded characters that represent the text that gets presented. These characters are determined by a [font file](fnt.md). Some of these characters aren't printed, but instead control *how* the text gets presented. Such as font color, or text justification.

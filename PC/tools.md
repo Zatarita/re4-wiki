@@ -24,11 +24,5 @@
 * [UDAS]()
 
 ### [MDT Tool](archive/MDT%20Tool.zip)
-Edits [MDT]() files for all languages that utilize the latin alphabet.
-> Note as of update 1.10 Traditional and Simplified Chinese were added to the game. These are unsupported by this tool.
-* English
-* French
-* German
-* Italian
-* Spanish
+Edits [MDT]() files for all languages that utilize the latin alphabet.\n> Note as of update 1.10 Traditional and Simplified Chinese were added to the game. These are unsupported by this tool.\n* English\n* French\n* German\n* Italian\n* Spanish\n
 
