@@ -12,7 +12,30 @@
  The MDT Language is a list of strings. When working with the standard version of the MDT we see a similar structure to the header. We have a count denoting how many strings there are, then the offsets, and the [MDT Strings](#mdt-string). The structure of the MDT Language isn't fully mapped out yet though. There is an unknown at the beginning of the language that is suspected to be vestigial from the console ports; however, [this requires confirmation](https://github.com/Zatarita/re4-wiki/issues/new?title=update-MDT-Unknown).
 ## MDT String
  The MDT String is a list of [16-bit numbers](https://en.wikipedia.org/wiki/16-bit_computing). These numbers either control how the text gets presented to the screen, or they *are* the characters that gets presented to screen. The highest 8-bits is the index which gets grabbed from the [FNT](fnt.md) file. The Lowest 8-bits are [special characters](#special-characters). There are only 18 of them; however, they control things such as the flow and presentation of the text.
-
+## Special Characters
+ Some characters don't actually contribute to which character is presented to screen; however, they are responsible for controlling the flow and appearance of the characters that come after it. Some of these characters utilize the next number in the sequence as a modifier. For example the color control character has another character after it that defines which color should be selected, or the left justification character has distance from the left of the page as the next character.<br>
+ | Value | Has Modifier | Modifier | Description |
+ | - | :-: | :-: | :- |
+ | 0x00 | x |  | Start of string. |
+ | 0x01 | x |  | End of string. |
+ | 0x02 | ✓ | Line Number | Insert another string from the room's MDT.  |
+ | 0x03 | x |  | Newline |
+ | 0x04 | x |  | Newpage |
+ | 0x05 | ✓ | Print Speed | Prints each character one character at a time. |
+ | 0x06 | ✓ | Color Index | Changes the color of all text that comes after this point. The colors are determined by a hard coded color table. Each version has slightly different colors available. |
+ | 0x07 | x |  | An option to a question. |
+ | 0x08 | x |  | Wait for player input |
+ | 0x09 | ✓ | Sleep Duration | Sleep for a specific duration before continuing. |
+ | 0x0a | x |  | The quantity of the last item picked up. This is persistent between saves and rooms. |
+ | 0x0b | ✓ | Justification Left | Distance from the left side of the screen where the message will appear |
+ | 0x0c | ✓ | Justification Top | Distance from the top of the screen where the message will appear. |
+ | 0x0d | ✓ | Unknown | Currently unknown what this does; however, source code indicates that it does *something* and possibly takes a modifier. |
+ | 0x0e | x |  | Return from an insertion. Note! If this is called on a string that wasn't inserted it will soft lock the game. Any reference to a seperate MDT entry requires this character to return control back to the main string. |
+ | 0x0f | ✓ | Line Number | Inserts a string from core_6.mdt |
+ | 0x10 | x |  | The name of the last item picked up. This is persisten between saves and rooms. |
+ | 0x11 | ✓ | Line Number | Inserts a string from core_17.mdt |
+ | 0x12 | ✓ | Character Index | Inserts a character name. This is only used during walkie talkie cutscenes, and only works under certain circumstances. |
+ 
 ## Structure
 ### *Header*
 
