@@ -39,6 +39,7 @@ structure:
   Strings:
    type: array
    subtype: MDT String[Count]
+   comments: The actual array of strings contained within the language.
    references: {
       MDT String: "#mdt-string-1"
    }

@@ -10,7 +10,7 @@ import shutil
 
 outputPath  = "Final/"
 todoOutPath = "Todo/"
-structureTableFormat = '\n| Field | <span style="display: inline-block; width:150px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |\n| :- | :- | :-: | :- | :- |'
+structureTableFormat = '\n| Field | <span style="display: inline-block; width:200px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |\n| :- | :- | :-: | :- | :- |'
 
 
 def createFilePath(path : str):
