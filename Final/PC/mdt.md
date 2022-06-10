@@ -44,7 +44,7 @@
 | :- | :- | :-: | :- | :- |
 | Count | uint32_t   |  | 6 | Count of how many languages are in the file. It is possible that this value does not equal 6. In that case The MDT only has one language inside of it and this will instead jump straight to the start of the [MDT Langauge](#mdt-language). |
 | Offsets | array : uint32_t [Count] |  |  | Offsets pointing to the start of each language. |
-| Languages | array : [MDT Language](#mdt-language) [Count] |  |  | The actual languages themselves. |
+| Languages | array : [MDT Language](#mdt-language-1) [Count] |  |  | The actual languages themselves. |
 | Note |    |  |  | The size of the array varries depending on version. For version 1.10+ the MDT has two extra offsets for Traditional and Simplified Chinese. These are just hacked onto the end, and the count is not adjusted to reflect that; however, Fixing the value causes the game to crash. For version 1.10 Count + 2 should be used. |
 ### *MDT Language*
 

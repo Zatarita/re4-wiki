@@ -18,7 +18,7 @@ structure:
    size: Count
    comments: The actual languages themselves.
    references: {
-    MDT Language: "#mdt-language"
+    MDT Language: "#mdt-language-1"
    }
   Note:
    type: ""
