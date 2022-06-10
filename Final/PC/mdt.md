@@ -53,11 +53,11 @@
 | :- | :- | :-: | :- | :- |
 | Unknown | uint32_t   |  |  | Currently Unknown. Assumed vestigial data from console ports. |
 | Count | uint32_t   |  |  | Count of how many strings are inside this particular language. |
-| Offsets | array : uin32_t [Count] |  |  | Offsets pointing to the start of each string. |
-| Strings | array : [MDT String](#mdt-string)[Count]  |  |  |  |
+| Offsets | array : uint32_t [Count] |  |  | Offsets pointing to the start of each string. |
+| Strings | array : [MDT String](#mdt-string-1)[Count]  |  |  |  |
 ### *MDT String*
 
 
 | Field | <span style="display: inline-block; width:150px">Type</span> | Legal Values | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| Characters | array : short [n] | {Start: 0, End: 1, Insert: 2, Newline: 3, Newpage: 4, Speed: 5, Color: 6, Option: 7, Pause: 8, Sleep: 9, Quantity: 10, Left Justify: 11, Top Justify: 12, Unknown: 13, Return: 14, Core: 15, Last Pickup: 16, Item: 17, Character: 18, Font Character: 128, } |  | Each string starts and ends with a Start and End character respectively. Beyond that each short is either a special character, or a reference to a character defined in a [FNT](font.md) file. The lower 8 bits are reserved for special characters and the upper 8 bits (128+) are indexes into a [FNT](font.md) file. |
+| Characters | array : short [n] | {Start: 0, End: 1, Insert: 2, Newline: 3, Newpage: 4, Speed: 5, Color: 6, Option: 7, Pause: 8, Sleep: 9, Quantity: 10, Left Justify: 11, Top Justify: 12, Unknown: 13, Return: 14, Core: 15, Last Pickup: 16, Item: 17, Character: 18, Font Character: 128+, } |  | Each string starts and ends with a Start and End character respectively. Beyond that each short is either a special character, or a reference to a character defined in a [FNT](font.md) file. The lower 8 bits are reserved for special characters and the upper 8 bits (128+) are indexes into a [FNT](font.md) file. |

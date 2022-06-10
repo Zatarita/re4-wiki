@@ -33,14 +33,14 @@ structure:
    comments: Count of how many strings are inside this particular language.
   Offsets:
    type: array
-   subtype: uin32_t
+   subtype: uint32_t
    comments: Offsets pointing to the start of each string.
    size: Count
   Strings:
    type: array
    subtype: MDT String[Count]
    references: {
-      MDT String: "#mdt-string"
+      MDT String: "#mdt-string-1"
    }
 
  MDT String:
@@ -68,7 +68,7 @@ structure:
      Last Pickup: 16,
      Item: 17,
      Character: 18,
-     Font Character: 128
+     Font Character: 128+
    }
    references: {
      FNT: font.md
