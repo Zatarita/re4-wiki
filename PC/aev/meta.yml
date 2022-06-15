@@ -1,0 +1,17 @@
+type: Filetype
+name: aev
+out: PC/
+tags: [Container]
+version: ["All"]
+extension: [".aev"]
+dependencies: null
+
+tools: ["SoP - Toolset"]
+endianness: [little, big]
+
+image: null
+compression: null
+structure: PC/aev/structure.yml
+body: [PC/aev/body.yml]
+
+references: [udas]

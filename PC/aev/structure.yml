@@ -1,0 +1,430 @@
+structure:
+ Header:
+  Signature:
+   type: string
+   default: AEV
+   options: AEV
+   comments: Signature denoting the begining of the file. Used to validate the data. Null terminated
+  Unknown:
+   type: byte
+   default: 4
+   comments: Unknown what this does. Set to 4 most times.
+  Unknown 2:
+   type: byte
+   default: 1
+   comments: unknown what this does. Set to 1 most times.
+  Count:
+   type: byte
+   comments: How many events are in the AEV. Max 127
+  Padding:
+   type: array
+   subtype: byte
+   size: 0xD
+  Event Entries:
+   type: array
+   subtype: Event
+   size: Count
+   comments: The array of events contained inside the room.
+ Event:
+  Unknown:
+   type: byte
+   comments: Currently unknown
+   default: 1
+  Area Hit Type:
+   type: enum
+   subtype: byte
+   default: 1
+   options: {
+    "Square": 0,
+    "Circle": 1,
+    "Eye Trigger": 2
+   }
+   comments: Determines if the collision area is rectangular, or a cylindrical. Note "Eye Trigger" has been disabled; however, appears to still have some functionality.
+  Unused:
+   type: array
+   subtype: byte
+   size: 2
+   comments: 2 bytes padding
+  Y Position:
+   type: float
+   comments: Starting Y position of the trigger volume
+  Height:
+   type: float
+   comments: Height of the trigger volume
+  Position 1:
+   type: array
+   subtype: float
+   size: 2
+   comments: Position (x,z) of the first point in the square. Note if Area Hit Type set to Circle this value is (x,z) for the center of the circle.
+  Position 2:
+   type: array
+   subtype: float
+   size: 2
+   comments: Position (x,z) of the second point in the square. Note if Area Hit Type set to Circle this value is unused.
+  Position 3:
+   type: array
+   subtype: float
+   size: 2
+   comments: Position (x,z) of the third point in the square. Note if Area Hit Type set to Circle this value is unused.
+  Position 4:
+   type: array
+   subtype: float
+   size: 2
+   comments: Position (x,z) of the fourth point in the square. Note if Area Hit Type set to Circle this value is unused.
+  Active:
+   type: byte
+   options: {
+    "Inactive" : 2,
+    "Active" : 3
+   }
+   default: 3
+   comments: This is enable, or disable the event. This is used internally to disable an event being interacted with to prevent multiple activations.
+  Type:
+   type: enum
+   subtype: byte
+   options: {
+    Normal: 0,
+    Door: 1,
+    Exec: 2,
+    Unused: 3,
+    Flag: 4,
+    Message: 5,
+    Planter: 6,
+    Jump: 7,
+    Save: 8,
+    SHD Display: 9,
+    Damage: 10,
+    SCR_AT: 11,
+    View Control: 12,
+    Field Info: 13,
+    Crouch (Stoop): 14,
+    Small Key: 15,
+    Ladder: 16,
+    Use: 17,
+    Hide: 18,
+    Position Jump: 19,
+    Item Parent: 20
+   }
+   comments: Determines the event type. Each event type has different parameters inside the "buffer" area
+  Hit Type:
+   type: enum
+   subtype: byte
+   options: {
+    under: 0,
+    front: 1,
+    under+angle: 2,
+    front+angle: 3
+   }
+   comments: todo when I can think
+  Trigger Type:
+   type: enum
+   subtype: byte
+   options: {
+    auto: 1,
+    manual: 2,
+    semiauto: 4,
+    action button: 8,
+    onetime: 0x80
+   }
+   comments: Determines how the event gets triggered.
+  Target Type:
+   type: enum
+   subtype: byte
+   options: {
+    player: 1,
+    enemy: 2,
+    object: 4,
+    ashlee: 8
+   }
+   comments: Determines which entities can trigger the event.
+  Unused:
+   type: array
+   subtype: byte
+   size: 10
+  Priority:
+   type: byte
+   default: 3
+   comments: Max 15
+  Unused:
+   type: array
+   subtype: byte
+   size: 3
+  Hit Angle:
+   type: byte
+   comments: Determines the angle upon which the target should be facing to allow triggering of the event. Only set if Hit Type is one of the +angle variants.
+  Open Angle:
+   type: byte
+   comments: Determines "spread" of the view cone when Hit Type is set to a +angle variant
+  Action Type:
+   type: byte
+   comments: Determines the activation text that gets displayed to screen if Trigger Type is set to manual, semiauto, or action button
+  Padding:
+   type: array
+   subtype: byte
+   size: 8
+  Unknown:
+   type: byte
+   comments: This is used by the game at runtime.
+  Padding:
+   type: array
+   subtype: byte
+   size: 8
+  Parameter Buffer Area:
+   type: array
+   subtype: byte
+   size: 0x40
+   comments: This area is multipurpose. Depending on the value of "Type" different parameters will be in here. See the different types below for the structure of each type in this buffer area.
+  unknown pointer:
+   type: uint32_t
+   comments: This is used by the game at runtime. Assumed it is a function pointer.
+ Normal Event:
+  Note:
+   type: " "
+   comments: There are no parameters for the Normal Event type.
+ Door Event:
+  Position:
+   type: array
+   subtype: float
+   size: 3
+   comments: (x,y,z) Position in the room being transitioned into.
+  Facing:
+   type: float
+   comments: Desired facing (in degrees) in the room being transitioned into.
+  Next Stage:
+   type: byte
+   comments: Stage number for the desired room.
+  Next Room:
+   type: byte
+   comments: Desired room number for the above Stage.
+  Key ID:
+   type: enum
+   subtype: byte
+   options: {
+    default: 0,
+    In Lock Close: 1,
+    In Lock Open: 2
+   }
+   comments: Fill this out
+  Flag Number:
+   type: byte
+   comments: Determines which lock flag gets checked to see if the door is locked. Max 0x3f
+  Unused:
+   type: array
+   subtype: byte
+   size: 4
+  Next Part Number:
+   type: byte
+   comments: Determines which part number in a room to jump to.
+  Key Sound Effect:
+   type: byte
+   comments: Determines which sound plays from the room's sound table during unlock.
+  Open Sound Effect:
+   type: byte
+   comments: Determines which sound plays from the room's sound table during opening.
+  Fade Effect:
+   type: enum
+   subtype: byte
+   options: {
+    Normal: 1,
+    Fade: 2,
+    Black: 3
+   }
+   comments: Determines the effect used after interacting with the door. Normal is the zoom effect.
+ Execute Event:
+  Note:
+   type: " "
+   comments: There are no parameters for the Execute Event type.
+ Flag:
+  Flag ID:
+   type: enum
+   subtype: byte
+   options: {
+     Room Flag: 0,
+     Room Save Flag: 1,
+     Scenario Flags: 2
+   }
+   comments: Determines where the flag that is being toggled is located.
+  Flag Action:
+   type: enum
+   subtype: byte
+   options: {
+    Turn On: 0,
+    Turn Off: 1
+   }
+   comments: Determines if the flag is being set, or unset.
+  Flag Number:
+   type: uint16_t
+   comments: Determines which flag is being toggled. Max 0xFF
+ Message Event:
+  Message Type:
+   type: enum
+   subtype: uint16_t
+   options: {
+    Room Message: 0,
+    Common Message: 1
+   }
+   comments: todo
+  Message Number:
+   type: uint16_t
+   comments: Determines which line is grabbed from the MDT file
+  Camera Number:
+   type: byte
+   comments: Determines which index from the CAM to use when interacting with the message.
+  Sound Effect Type:
+   type: enum
+   subtype: byte
+   options: {
+    Room: 0,
+    Player: 1
+   }
+   comments: Determines if the sound is pulled from the room, or the player sound table.
+  Sound Effect Number:
+   type: byte
+   comments: Determines which sound to be pulled from the sound table.
+ Jump Event:
+  Position:
+   type: array
+   subtype: float
+   size: 3
+   comments: Position to jump to (x,y,z)
+ Save Event:
+  Terminal Number:
+   type: uint32_t
+   comments: unknown what this does. Max 10
+ SHD Display Event:
+  SHD Number:
+   type: uint16_t
+   comments: Determines which SHD index to toggle.
+  Display Flag:
+   type: enum
+   subtype: byte
+   options: {
+    Off: 0,
+    On: 1
+   }
+   comments: Determines if the SHD is being toggled on, or toggled off.
+ Damage Event:
+  Damage Timer:
+   type: uint32_t
+   comment: Determines the durations between stacking damage.
+  Damage Type:
+   type: enum
+   subtype: byte
+   options: {
+    No Hit: 0,
+    Fire: 1,
+    Electricity: 2,
+    Env Light: 3,
+    Env Fire: 4,
+    Grenade Blast: 5,
+    Push: 6
+   }
+   comments: Determines what type of damage is being applied.
+  Flags:
+   type: enum
+   subtype: byte
+   options: {
+    Damage Die Flag: 1,
+    Damage Angle Set: 2
+   }
+   comments: Todo
+  Unused:
+   type: array
+   subtype: byte
+   size: 2
+  Damage:
+   type: uint32_t
+   comments: Determines how much damage is applied
+  Damage Angle:
+   type: uint32_t
+   comments: Determines the knock back angle when "Damage Angle Set" flag is active
+ SCR_AT Event:
+  Note:
+   type: " "
+   comments: Todo
+ View Control Event:
+  Position:
+   type: array
+   subtype: float
+   size: 3
+   comments: TODO
+  Angle Y:
+   type: float
+   comments: TODO
+  Unknown:
+   type: byte
+   comments: unknown
+  Type:
+   type: array
+   subtype: byte
+   options: {
+    Unknown_0: 0,
+    Unknown_1: 1
+   }
+  Radius:
+   type: float
+   comments: TODO
+  Out Range:
+   type: float
+   comments: TODO
+ Field Info:
+  Field ID:
+   type: uint32_t
+   comment: Max 3
+ Ladder Event:
+  Position:
+   type: array
+   subtype: float
+   size: 3
+   comments: Position of the ladder (x, y, z)
+  Angle:
+   type: float
+   comments: Angle of approach for the ladder.
+  Height:
+   type: uint32_t
+   comments: height of the ladder
+  Cam Indexes:
+   type: array
+   subtype: byte
+   size: 3
+   comments: Indexes of the CAM to be used when accending ladder.
+ Use Event:
+  Use ID:
+   type: uint32_t
+   comments: Item ID to be used.
+ Hide Event:
+  Type:
+   type: byte
+   default: 3
+   options: 3
+   comments: 3 is the only value that can be used here.
+  Hide Position Set:
+   type: byte
+   options: 1
+   default: 1
+   comments: Flag is set so long as there is a hide position assigned
+  Hide Area Set:
+   type: byte
+   options: 1
+   default: 1
+   comments: Flag is set so long as there is a Hide Area assigned
+  Active:
+   type: byte
+   comments: Use internally by the game to determine if ashlee is currently hiding in the area. If she is hiding the value is 2
+  Hiding Position:
+   type: array
+   subtype: float
+   size: 8
+   comments: 4 points that make up the Hiding Position area
+  Hiding Position Y:
+   type: float
+   comment: Y coordinate of the Hiding Position
+  Height:
+   type: float
+   comment: Height of the Hiding Position
+  Hiding Area:
+   type: array
+   subtype: float
+   size: 3
+   comments: Position (x, y, z) of the hiding area
+ 

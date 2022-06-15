@@ -107,12 +107,12 @@ def parseStruct(stream, path : str ):
                     ret = "{"
                     for key, value in options.items():
                         ret += f"{key}: {value}, "
-                    options = ret + "}"
+                    options = ret[:-2] + "}"
                 if isinstance(options, list):
                     if len(options) > 0:
                         if isinstance(options[0], int):
                             if hexView:
-                                options = '[0x{}]'.format(', 0x'.join(hex(x)[2:].upper() for x in options))
+                                options = '[0x{}]'.format('0x'.join(hex(x)[2:].upper() for x in options))
             else: options = ""
 
             formattedString = f"| {field} | {type} {subtype} {size} | {options} | {default} | {comments} |\n"
