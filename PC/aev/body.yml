@@ -1,10 +1,35 @@
 title: AEV
 children: 
   Summary:
-    text: ""
+    text: >
+     <img align="right" src="images/AEV Generic.png" width = 200 height = 200>
+     The AEV file is used to define actions a player can take in a room. Each action is given
+     a designed trigger area. When an entity is standing in the trigger area they are able to
+     interact with the event. Some events happen automatically, while others require the player to press the 
+     action button to enable it. Some of the events are linked to internal functionality and thusly
+     aren't easily modable. Any event falling in this category is left out until more information 
+     can be found out about them.
+     <br><br><br><br><br><br><br>
+
+     
+
+     ---
     references: {
     }
-  Events:
-    text: "
-     
-    "
+  Door Event:
+    text: 
+     <img align="left" style="margin:10px" src="images/Events/Door Event.png" width = 200 height = 200></img>
+     The Door event is used to transition between rooms. When activating a door event the game checks the parameters supplied and will play a designated "Open Sound"
+     from the room's sound table and attempt to load the Next Room in the Next Stage. It will then place the player in the desired Position and Facing (or Room Part) 
+     supplied in the event parameters. Some doors might be locked. In this case the event must have a lock flag assigned that signifies the current locked state of 
+     the door. This is stored internally by the game. There are a maximum of 0x3f flags reserved for this purpose. They are stored along with other player information 
+     during save. (Validation needed) Doors locked in this manor have a sister door that toggles the locked flag by unlocking it. typically the "other side" of the door. 
+     In the event the door is unlocked. The game checks the parameters of the event to pull a sound from the room sound table for unlocking the door.
+     <br><br><br>
+
+
+     ---
+    references: {
+      parameters: "#door-event-1",
+      #Part: TODO
+    }

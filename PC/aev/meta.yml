@@ -4,7 +4,34 @@ out: PC/
 tags: [Container]
 version: ["All"]
 extension: [".aev"]
-dependencies: null
+dependencies: {
+  PC\aev\images\Events\Damage Event.png : PC\images\Events\Damage Event.png,
+  PC\aev\images\Events\Door Event - Fade Effect Normal.png : PC\images\Events\Door Event - Fade Effect Normal.png,
+  PC\aev\images\Events\Door Event - Locked.png : PC\images\Events\Door Event - Locked.png,
+  PC\aev\images\Events\Door Event - Unlock Door.png : PC\images\Events\Door Event - Unlock Door.png,
+  PC\aev\images\Events\Door Event.png : PC\images\Events\Door Event.png,
+  #PC\aev\images\Events\Exec Event.png : PC\images\Events\Exec Event.png,
+  PC\aev\images\Events\Flag Event.png : PC\images\Events\Flag Event.png,
+  PC\aev\images\Events\Flag Event - Toggled.png : PC\images\Events\Flag Event - Toggled.png,
+  PC\aev\images\Events\Hide Event.png : PC\images\Events\Hide Event.png,
+  PC\aev\images\Events\Ladder Event.png : PC\images\Events\Ladder Event.png,
+  PC\aev\images\Events\Message Event.png : PC\images\Events\Message Event.png,
+  PC\aev\images\Events\Save Event.png : PC\images\Events\Save Event.png,
+  PC\aev\images\Events\Use Event - Item Used.png: PC\images\Events\Use Event - Item Used.png,
+  PC\aev\images\Events\Use Event - Use Item.png : PC\images\Events\Use Event - Use Item.png,
+  PC\aev\images\Volumes\Circular Trigger Volume - Radius.png : PC\images\Volumes\Circular Trigger Volume - Radius.png,
+  PC\aev\images\Volumes\Circular Trigger Volume.png: PC\images\Volumes\Circular Trigger Volume.png,
+  PC\aev\images\Volumes\Collision Detection - Front.png: PC\images\Volumes\Collision Detection - Front.png,
+  PC\aev\images\Volumes\Collision Detection - Under.png: PC\images\Volumes\Collision Detection - Under.png,
+  PC\aev\images\Volumes\Square Trigger Volume - Points Moved.png: PC\images\Volumes\Square Trigger Volume - Points Moved.png,
+  PC\aev\images\Volumes\Square Trigger Volume - Points.png: PC\images\Volumes\Square Trigger Volume - Points.png,
+  PC\aev\images\Volumes\Square Trigger Volume.png: PC\images\Volumes\Square Trigger Volume.png,
+  PC\aev\images\Volumes\Volume Generic - Height.png: PC\images\Volumes\Volume Generic - Height.png,
+  PC\aev\images\Volumes\Volume Generic - Hit Angle.png: PC\images\Volumes\Volume Generic - Hit Angle.png,
+  PC\aev\images\Volumes\Volume Generic - Open Angle.png: PC\images\Volumes\Volume Generic - Open Angle.png,
+  PC\aev\images\Volumes\Volume Generic - PY.png: PC\images\Volumes\Volume Generic - PY.png,
+  PC\aev\images\AEV Generic.png : PC\images\AEV Generic.png
+}
 
 tools: ["SoP - Toolset"]
 endianness: [little, big]

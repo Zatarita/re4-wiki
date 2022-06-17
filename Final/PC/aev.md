@@ -1,8 +1,14 @@
 # AEV
 
-## Events
+## Summary
+<img align="right" src="images/AEV Generic.png" width = 200 height = 200> The AEV file is used to define actions a player can take in a room. Each action is given a designed trigger area. When an entity is standing in the trigger area they are able to interact with the event. Some events happen automatically, while others require the player to press the  action button to enable it. Some of the events are linked to internal functionality and thusly aren't easily modable. Any event falling in this category is left out until more information  can be found out about them. <br><br><br><br><br><br><br>
 
 
+---
+## Door Event
+<img align="left" style="margin:10px" src="images/Events/Door Event.png" width = 200 height = 200></img> The Door event is used to transition between rooms. When activating a door event the game checks the [parameters](#door-event-1) supplied and will play a designated "Open Sound" from the room's sound table and attempt to load the Next Room in the Next Stage. It will then place the player in the desired Position and Facing (or Room Part) supplied in the event [parameters](#door-event-1). Some doors might be locked. In this case the event must have a lock flag assigned that signifies the current locked state of the door. This is stored internally by the game. There are a maximum of 0x3f flags reserved for this purpose. They are stored along with other player information during save. (Validation needed) Doors locked in this manor have a sister door that toggles the locked flag by unlocking it. typically the "other side" of the door. In the event the door is unlocked. The game checks the [parameters](#door-event-1) of the event to pull a sound from the room sound table for unlocking the door. <br><br><br>
+
+---
 ## Structure
 ### *Header*
 
@@ -29,7 +35,7 @@
 | Position 2 | array : float [2] |  |  | Position (x,z) of the second point in the square. Note if Area Hit Type set to Circle this value is unused. |
 | Position 3 | array : float [2] |  |  | Position (x,z) of the third point in the square. Note if Area Hit Type set to Circle this value is unused. |
 | Position 4 | array : float [2] |  |  | Position (x,z) of the fourth point in the square. Note if Area Hit Type set to Circle this value is unused. |
-| Active | byte   | {Inactive: 2, Active: 3} | 3 | This is enable, or disable the event. This is used internally to disable an event being interacted with to prevent multiple activations. |
+| Active | byte   | {Inactive: 2, Active: 3} | 3 | This is used to enable or disable the event. This is used internally to disable an event being interacted with to prevent multiple activations. |
 | Type | enum : byte  | {Normal: 0, Door: 1, Exec: 2, Unused: 3, Flag: 4, Message: 5, Planter: 6, Jump: 7, Save: 8, SHD Display: 9, Damage: 10, SCR_AT: 11, View Control: 12, Field Info: 13, Crouch (Stoop): 14, Small Key: 15, Ladder: 16, Use: 17, Hide: 18, Position Jump: 19, Item Parent: 20} |  | Determines the event type. Each event type has different parameters inside the "buffer" area |
 | Hit Type | enum : byte  | {under: 0, front: 1, under+angle: 2, front+angle: 3} |  | todo when I can think |
 | Trigger Type | enum : byte  | {auto: 1, manual: 2, semiauto: 4, action button: 8, onetime: 128} |  | Determines how the event gets triggered. |

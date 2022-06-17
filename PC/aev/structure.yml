@@ -78,7 +78,7 @@ structure:
     "Active" : 3
    }
    default: 3
-   comments: This is enable, or disable the event. This is used internally to disable an event being interacted with to prevent multiple activations.
+   comments: This is used to enable or disable the event. This is used internally to disable an event being interacted with to prevent multiple activations.
   Type:
    type: enum
    subtype: byte
