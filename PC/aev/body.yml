@@ -116,5 +116,8 @@ children:
     <br><br>
     <br><br>
     <br><br>
+   references: {
+    terminal number: "#terminal-number"
+   }
     
     
