@@ -10,7 +10,11 @@
 <br><br>
 <figure>
  <img style="margin:10px" src="images\Volumes\Circular Trigger Volume - Radius.png" width=100 height=100>
- <figcaption>Circular Trigger Area</figcaption>
+ <figcaption>
+ 
+ ##### Circular Trigger Area
+ 
+ </figcaption>
 </figure>
 
 ---
