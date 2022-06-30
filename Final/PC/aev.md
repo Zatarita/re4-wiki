@@ -9,8 +9,8 @@
 <img align="left" style="margin:10px" src="images/Volumes/Square Trigger Volume.png" width=200 height=200></img> A trigger volume is a defined area where an [entity](#target-type) can initiate an AEV event. Each event has it's own dedicated trigger volume. These volumes have extra [metadata](#event) used to define it's [shape ](#area-hit-type) and [functionality](#active). There are two primary shapes the trigger area can be, rectangular (default) and circular. When the trigger volume is rectangular the game reads  all [four points of the rectangle](#position-1) (x, z), the starting [Y position](#y-position) of all the points, and the [height ](#height)of the trigger area; however, when the trigger volume is circular the game treats the [first of the four points](#position-1) as the center of the circle (x, z); the other 3 points are unused. Instead the [radius](#radius) will be used in this case. This determines the size and position of the trigger area. Beyond that the [Y position](#y-position) and [height ](#height)are still applied the same way as the rectangular trigger area. 
 <br><br>
 <figure>
- <img style="margin:10px" src="images\Volumes\Circular Trigger Volume - Radius.png" width=100 height=50>
- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+ <img style="margin:10px" src="images\Volumes\Circular Trigger Volume - Radius.png" width=100 height=100>
+ <figcaption>Circular Trigger Area</figcaption>
 </figure>
 
 ---
