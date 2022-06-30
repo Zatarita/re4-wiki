@@ -10,7 +10,7 @@
 ## Door Event
 <img align="left" src="images/Events/Door Event.png" width = 220 height = 220></img> <img align="left" src="images\Events\Door Event - Locked.png" width = 100 height = 100></img> The Door event is used to transition between rooms. When activating a door event the game checks the [parameters](#door-event-1) supplied. It will play a designated "Open Sound" from the room's sound table and attempt to load the Next Room in the Next Stage. It will then place the player in the desired Position and Facing  supplied in the event [parameters](#door-event-1). Some doors might be locked. In this case the event must have a lock flag assigned that signifies the current locked <img align="left" src="images\Events\Door Event - Unlock Door.png" width = 100 height = 100></img> state of the door. This is stored internally by the game.  There are a maximum of 0x3f flags reserved for this purpose. They are stored along with other player information  during save. (Validation needed) Doors locked in this manor have a sister door that toggles the locked flag by unlocking it. typically the "other side" of the door.  In the event the door is unlocked. The game checks the [parameters](#door-event-1) of the event to pull a sound from the room sound table for unlocking the door. Then it will toggle the locked flag. <br>
 ## Flag Event
-The Flag event is used to modify a flag stored in memory. The event is able to [toggle on or off](#flag-action) a specific [flag number](#flag-number-1) from one of the [Room flags, Room-Save Flags, and Scenario flags](#flag-id).
+The Flag event is used to modify a flag stored in memory. The event is able to [toggle on or off](#flag-action) a specific [flag number](#flag-number) from one of the [Room flags, Room-Save Flags, and Scenario flags](#flag-id).
  <br><br><br>
 
 ## Structure
@@ -74,7 +74,7 @@ The Flag event is used to modify a flag stored in memory. The event is able to [
 | <span id='next-stage'>Next Stage</span> | byte   |  |  | Stage number for the desired room. |
 | <span id='next-room'>Next Room</span> | byte   |  |  | Desired room number for the above Stage. |
 | <span id='key-id'>Key ID</span> | enum : byte  | {default: 0, In Lock Close: 1, In Lock Open: 2} |  | Fill this out |
-| <span id='flag-number'>Flag Number</span> | byte   |  |  | Determines which lock flag gets checked to see if the door is locked. Max 0x3f |
+| <span id='lock-flag'>Lock Flag</span> | byte   |  |  | Determines which lock flag gets checked to see if the door is locked. Max 0x3f |
 | <span id='unused'>Unused</span> | array : byte [4] |  |  |  |
 | <span id='next-part-number'>Next Part Number</span> | byte   |  |  | Determines which part number in a room to jump to. |
 | <span id='key-sound-effect'>Key Sound Effect</span> | byte   |  |  | Determines which sound plays from the room's sound table during unlock. |

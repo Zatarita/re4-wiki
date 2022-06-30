@@ -214,7 +214,7 @@ structure:
     In Lock Open: 2
    }
    comments: Fill this out
-  Flag Number:
+  Lock Flag:
    type: byte
    comments: Determines which lock flag gets checked to see if the door is locked. Max 0x3f
   Unused:
