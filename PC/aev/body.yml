@@ -43,9 +43,6 @@ children:
      Things such as where to place the player when transitioning rooms, or what item number is needed to progress. Some events don't have any modifiable parameters and rely on hard coded functions
      instead.
      <br><br>
-
-
-     ---<br><br>
     references: {
       entity: "#target-type",
       metadata: "#event",
@@ -77,8 +74,6 @@ children:
      In the event the door is unlocked. The game checks the parameters of the event to pull a sound from the room sound table for unlocking the door. Then it will toggle
      the locked flag.
      <br><br><br>
-
-     ---<br><br>
     references: {
       parameters: "#door-event-1",
       #Part: TODO
@@ -89,8 +84,6 @@ children:
     The Flag event is used to modify a flag stored in memory. The event is able to toggle on or off a specific flag number from one of the Room flags, Room-Save Flags, and Scenario flags.
      <br><br><br>
      <br><br><br>
-
-    ---
    references: {
     toggle on or off: "#flag-action",
     flag number: "#flag-number",
