@@ -32,7 +32,8 @@ children:
      the entity; however, the game can also be set to ensure the entity is facing a specific angle as well. The hit angle and open angle determine the facing upon which an entity can trigger the volume. 
      <img align="right" style="margin:10px" src="images\Volumes\Volume Generic - Hit Angle.png" width=100 height=100></img>
      <img align="right" src="images\Volumes\Volume Generic - Open Angle.png" width=100 height=100></img>
-     This can be represented with a "fan". The hit angle deteremines the direction the fan faces, and the open angle determines the spread of the "fan".
+     This can be represented with a "fan". The hit angle deteremines the direction the fan faces, and the open angle determines the spread of the "fan". When the entity's viewing angle is 
+     within the boundaries of the fan, the event will be triggerable.
      <br><br>
      Finally, once the event has been triggered, the trigger volume will check the type associated with the event. Each type has extra information to know how to do it's job.
      These bits of extra information are called parameters, and they're stored at the end in the parameter buffer area of the event. These parameters tell the game how to handle each event.
