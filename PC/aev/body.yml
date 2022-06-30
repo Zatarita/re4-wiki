@@ -67,7 +67,7 @@ children:
 
 
   Door Event:
-    text: 
+    text: >
      <img align="left" src="images/Events/Door Event.png" width = 220 height = 220></img>
      <img align="left" src="images\Events\Door Event - Locked.png" width = 100 height = 100></img>
      The Door event is used to transition between rooms. When activating a door event the game checks the parameters supplied. It will play a designated "Open Sound"
@@ -87,8 +87,7 @@ children:
     }
 
   Flag Event:
-   text:
-    <br>
+   text: >
     The Flag event is used to modify a flag stored in memory. The event is able to toggle on or off a specific flag number from one of the Room flags, Room-Save Flags, and Scenario flags.
      <br><br><br>
      <br><br><br>
