@@ -45,7 +45,7 @@ children:
      <br><br>
 
 
-     ---
+     ---<br><br>
     references: {
       entity: "#target-type",
       metadata: "#event",
@@ -64,8 +64,6 @@ children:
       parameter buffer area: "#parameter-buffer-area",
       hard coded functions: "#function-pointer"
     }
-
-
   Door Event:
     text: >
      <img align="left" src="images/Events/Door Event.png" width = 220 height = 220></img>
