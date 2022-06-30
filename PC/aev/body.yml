@@ -182,6 +182,10 @@ children:
     <img align="right" src="images\Events\Use Event - Use Item.png" width = 100 height = 100></img>
     <img align="right" src="images\Events\Use Event - Item Used.png" width = 200 height = 200></img>
     The use event is a way to restrict progression until a specific item has been supplied to the event.
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
    references: {
     specific item: "#use-id"
    }
