@@ -80,7 +80,6 @@ children:
      the locked flag.
      <br><br><br>
 
-
      ---<br><br>
     references: {
       parameters: "#door-event-1",
@@ -89,6 +88,7 @@ children:
 
   Flag Event:
    text:
+    <br>
     The Flag event is used to modify a flag stored in memory. The event is able to toggle on or off a specific flag number from one of the Room flags, Room-Save Flags, and Scenario flags.
      <br><br><br>
      <br><br><br>
