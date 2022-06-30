@@ -15,6 +15,8 @@
 <img align="left" src="images/Events/Message Event.png" width = 200 height = 200></img> A Messsage event is used to display text on screen. When this event is triggered; the game will check to determine [which soundbank to use](#sound-effect-type), if any at all, for a [sound that is to be played](#sound-effect-number) when the message is triggered. (This is hard coded, and unable to be edited without a modification to the binary)  The game will then adjust the [camera's focus](#camera-number) to a specific CAM index if one has been assigned. Finally after setting everything up the game will display a specific index from the desired [MDT](mdt.md) file. <br><br> <br><br> <br><br>
 ## Save Event
 <img align="right" src="images/Events/Save Event.png" width = 200 height = 200></img> The save event allows the player to save their progress. There is only one parameter for this event type and that is [terminal number](#terminal-number). It is currently unknown what the parameter modifies. <br><br> <br><br> <br><br>
+## SHD Display Event
+Do research and fill this out <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
 
 ## Structure
 ### *Header*

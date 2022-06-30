@@ -119,5 +119,15 @@ children:
    references: {
     terminal number: "#terminal-number"
    }
+
+  SHD Display Event:
+   text: >
+    Do research and fill this out
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
     
     
