@@ -81,8 +81,10 @@ children:
 
   Flag Event:
    text: >
+    <img align="right" src="images\Events\Flag Event.png" width = 100 height = 100></img>
+    <img align="right" src="images\Events\Flag Event - Toggled.png" width = 100 height = 100></img>
     The Flag event is used to modify a flag stored in memory. The event is able to toggle on or off a specific flag number from one of the Room flags, Room-Save Flags, and Scenario flags.
-     <br><br><br>
+    <br><br><br>
    references: {
     toggle on or off: "#flag-action",
     flag number: "#flag-number",
