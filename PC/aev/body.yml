@@ -18,7 +18,10 @@ children:
     }
   Trigger Volumes:
     text: >
-     <img align="left" style="margin:10px" src="images/Volumes/Square Trigger Volume.png" width=200 height=200></img>
+     <img align="left" style="margin:10px" src="images\Volumes\Square Trigger Volume - Points.png" width=100 height=100></img>
+     <img align="left" src="images\Volumes\Circular Trigger Volume.png" width=100 height=100></img>
+     <img align="left" style="margin:10px" src="images\Volumes\Volume Generic - PY.png" width=100 height=100></img>
+     <img align="left" src="images\Volumes\Volume Generic - Height.png" width=100 height=100></img>
      A trigger volume is a defined area where an entity can initiate an AEV event. Each event has it's own dedicated trigger volume. These volumes have extra metadata used to define it's shape 
      and functionality. There are two primary shapes the trigger area can be, rectangular (default) and circular. When the trigger volume is rectangular the game reads 
      all four points of the rectangle (x, z), the starting Y position for all the points, and the height of the trigger area; however, when the trigger volume is circular
@@ -27,7 +30,7 @@ children:
      <br><br>
      <img align="right" style="margin:10px" src="images\Volumes\Collision Detection - Front.png" width=100 height=100></img>
      <img align="right" src="images\Volumes\Collision Detection - Under.png" width=100 height=100></img>
-     Beyond position there are parameters that determine *how* an volume gets triggered. The game needs to know which entities the volume targets (eg the player, enemies, ashlee).
+     Beyond position there are parameters that determine *how* a volume gets triggered. The game needs to know which entities the volume targets (eg the player, enemies, ashlee).
      When that entity enters the area it checks the hit-type to determine when the entity triggers the volume. The most simple case is when the hit-type is in front of, or directly under
      the entity; however, the game can also be set to ensure the entity is facing a specific angle as well. The hit angle and open angle determine the facing upon which an entity can trigger the volume. 
      <img align="right" style="margin:10px" src="images\Volumes\Volume Generic - Hit Angle.png" width=100 height=100></img>
