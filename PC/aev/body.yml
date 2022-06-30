@@ -85,6 +85,6 @@ children:
      <br><br><br>
    references: {
     toggle on or off: "#flag-action",
-    flag number: "#flag-number",
+    flag number: "#flag-number-1",
     "Room flags, Room-Save Flags, and Scenario flags": "#flag-id"
    }
