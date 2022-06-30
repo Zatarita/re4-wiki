@@ -387,18 +387,18 @@ structure:
    type: uint32_t
    comments: Max 3
  Ladder Event:
-  Position:
+  Ladder Position:
    type: array
    subtype: float
    size: 3
    comments: Position of the ladder (x, y, z)
-  Angle:
+  Ladder Angle:
    type: float
    comments: Angle of approach for the ladder.
-  Height:
+  Ladder Height:
    type: uint32_t
    comments: height of the ladder
-  Cam Indexes:
+  Ladder Cam Indexes:
    type: array
    subtype: byte
    size: 3

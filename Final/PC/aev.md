@@ -19,6 +19,12 @@
 Do research and fill this out <br><br> <br><br> <br><br> <br><br>
 ## Damage Event
 <img align="right" src="images/Events/Damage Event.png" width = 200 height = 200></img> When this event is triggered any entity that the [event is targeting](#target-type) will have a [specific type](#damage-type) of damage applied to them [periodically](#damage-timer). When the damage gets applied the game checks the [damage type](#damage-type) and picks an animation appropriate for the type. If the "[damage angle set](#flags)" flag is enabled the game will check for a specified [knock back angle](#damage-angle) and push the player that direction. It is worth noting that [damage type](#damage-type) 6 seems to be the only type capable of killing the player. More research is needed on the "[damage die flag](#flags)". <br><br>
+## SCR_AT Event
+Do research and fill this out <br><br> <br><br> <br><br> <br><br>
+## Field Info Event
+Do research and fill this out <br><br> <br><br> <br><br> <br><br>
+## Ladder Event
+<img align="left" src="images/Events/Ladder Event.png" width = 200 [height](#ladder-height) = 200></img> The ladder event allows for the player to accend from one location to another. When the player [approaches the ladder](#ladder-position) the game verifies that the player is facing the ladder. Then when the event activates the player will begin climbing the ladder, triggering [different camera angles](#ladder-cam-indexes) during the process. Finally once the player has reached the desired [height](#ladder-height) the game will end the animation and finish the event. <br><br> <br><br> <br><br>
 
 ## Structure
 ### *Header*
@@ -171,10 +177,10 @@ Do research and fill this out <br><br> <br><br> <br><br> <br><br>
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| <span id='position'>Position</span> | array : float [3] |  |  | Position of the ladder (x, y, z) |
-| <span id='angle'>Angle</span> | float   |  |  | Angle of approach for the ladder. |
-| <span id='height'>Height</span> | uint32_t   |  |  | height of the ladder |
-| <span id='cam-indexes'>Cam Indexes</span> | array : byte [3] |  |  | Indexes of the CAM to be used when accending ladder. |
+| <span id='ladder-position'>Ladder Position</span> | array : float [3] |  |  | Position of the ladder (x, y, z) |
+| <span id='ladder-angle'>Ladder Angle</span> | float   |  |  | Angle of approach for the ladder. |
+| <span id='ladder-height'>Ladder Height</span> | uint32_t   |  |  | height of the ladder |
+| <span id='ladder-cam-indexes'>Ladder Cam Indexes</span> | array : byte [3] |  |  | Indexes of the CAM to be used when accending ladder. |
 ### *Use Event*
 
 
