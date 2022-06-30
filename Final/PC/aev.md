@@ -129,7 +129,7 @@
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| <span id='damage-timer'>Damage Timer</span> | uint32_t   |  |  |  |
+| <span id='damage-timer'>Damage Timer</span> | uint32_t   |  |  | Determines the durations between stacking damage. |
 | <span id='damage-type'>Damage Type</span> | enum : byte  | {No Hit: 0, Fire: 1, Electricity: 2, Env Light: 3, Env Fire: 4, Grenade Blast: 5, Push: 6} |  | Determines what type of damage is being applied. |
 | <span id='flags'>Flags</span> | enum : byte  | {Damage Die Flag: 1, Damage Angle Set: 2} |  | Todo |
 | <span id='unused'>Unused</span> | array : byte [2] |  |  |  |

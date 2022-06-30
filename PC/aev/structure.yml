@@ -318,7 +318,7 @@ structure:
  Damage Event:
   Damage Timer:
    type: uint32_t
-   comment: Determines the durations between stacking damage.
+   comments: Determines the durations between stacking damage.
   Damage Type:
    type: enum
    subtype: byte
