@@ -95,15 +95,15 @@ children:
    text: >
     <img align="left" src="images/Events/Message Event.png" width = 200 height = 200></img>
     A Messsage event is used to display text on screen. When this event is triggered; the game will check to determine which soundbank to use, if any at all,
-    for a sound that is to be played when the message is triggered. If one is assigned, it will play a specific sound effect from the sound table. 
-    (This is hard coded, and unable to be edited without a modification to the binary) The game will then adjust the camera's focus to a specific CAM index if one has been assigned. Finally after
+    for a sound that is to be played when the message is triggered. (This is hard coded, and unable to be edited without a modification to the binary) 
+    The game will then adjust the camera's focus to a specific CAM index if one has been assigned. Finally after
     setting everything up the game will display a specific index from the desired MDT file.
     <br><br>
     <br><br>
     <br><br>
    references: {
     which soundbank to use: "#sound-effect-type",
-    sound effect: "#sound-effect-number",
+    sound that is to be played: "#sound-effect-number",
     camera's focus: "#camera-number"
    }
     
