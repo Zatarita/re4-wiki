@@ -172,7 +172,7 @@ children:
     <br><br>
    references: {
     approaches the ladder: "#ladder-position",
-    entity is facing the ladder: "#ladder-angle",
+    player is facing the ladder: "#ladder-angle",
     different camera angles: "#ladder-cam-indexes",
     desired height: "#ladder-height"
    }
