@@ -107,4 +107,15 @@ children:
     camera's focus: "#camera-number",
     MDT: "mdt.md"
    }
+
+  Save Event:
+   text: >
+    <img align="right" src="images/Events/Save Event.png" width = 200 height = 200></img>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    
     

@@ -13,6 +13,8 @@
 <img align="right" src="images\Events\Flag Event - Toggled.png" width = 100 height = 100></img> <img align="right" src="images\Events\Flag Event.png" width = 200 height = 200></img> The Flag event is used to modify a flag stored in memory. The event is able to [toggle on or off](#flag-action) a specific [flag number](#flag-number) from one of the [Room, Room-Save, or Scenario Flags](#flag-id). <br><br><br><br><br>
 ## Message Event
 <img align="left" src="images/Events/Message Event.png" width = 200 height = 200></img> A Messsage event is used to display text on screen. When this event is triggered; the game will check to determine [which soundbank to use](#sound-effect-type), if any at all, for a [sound that is to be played](#sound-effect-number) when the message is triggered. (This is hard coded, and unable to be edited without a modification to the binary)  The game will then adjust the [camera's focus](#camera-number) to a specific CAM index if one has been assigned. Finally after setting everything up the game will display a specific index from the desired [MDT](mdt.md) file. <br><br> <br><br> <br><br>
+## Save Event
+<img align="right" src="images/Events/Save Event.png" width = 200 height = 200></img> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
 
 ## Structure
 ### *Header*
