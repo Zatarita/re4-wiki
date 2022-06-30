@@ -46,7 +46,7 @@
 | <span id='hit-type'>Hit Type</span> | enum : byte  | {under: 0, front: 1, under+angle: 2, front+angle: 3} |  | todo when I can think |
 | <span id='trigger-type'>Trigger Type</span> | enum : byte  | {auto: 1, manual: 2, semiauto: 4, action button: 8, onetime: 128} |  | Determines how the event gets triggered. |
 | <span id='target-type'>Target Type</span> | enum : byte  | {player: 1, enemy: 2, object: 4, ashlee: 8} |  | Determines which entities can trigger the event. |
-| <span id='unknown-'>Unknown </span> | byte   |  |  | This is used by the game at runtime. |
+| <span id='unknown-'>Unknown </span> | byte   |  |  | Unknown, populated at runtime |
 | <span id='unknown--'>Unknown  </span> | array : byte [5] |  |  |  |
 | <span id='function-pointer'>Function Pointer</span> | uint32_t   |  |  | Pointer to a hard coded function (assumed to be inside the scenario) associated with the event. |
 | <span id='priority'>Priority</span> | byte   |  | 3 | Max 15 |
@@ -55,6 +55,7 @@
 | <span id='open-angle'>Open Angle</span> | byte   |  |  | Determines "spread" of the view cone when Hit Type is set to a +angle variant |
 | <span id='action-type'>Action Type</span> | byte   |  |  | Determines the activation text that gets displayed to screen if Trigger Type is set to manual, semiauto, or action button |
 | <span id='padding'>Padding</span> | array : byte [8] |  |  |  |
+| <span id='unknown---'>Unknown   </span> | byte   |  |  | This is used by the game at runtime. |
 | <span id='padding-'>Padding </span> | array : byte [8] |  |  |  |
 | <span id='parameter-buffer-area'>Parameter Buffer Area</span> | array : byte [64] |  |  | This area is multipurpose. Depending on the value of "Type" different parameters will be in here. See the different types below for the structure of each type in this buffer area. |
 ### *Normal Event*

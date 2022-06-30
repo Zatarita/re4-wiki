@@ -174,7 +174,7 @@ structure:
    type: array
    subtype: byte
    size: 8
-  "Unknown ":
+  "Unknown   ":
    type: byte
    comments: This is used by the game at runtime.
   "Padding ":
