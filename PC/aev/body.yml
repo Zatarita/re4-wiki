@@ -185,7 +185,6 @@ children:
     <br><br>
     <br><br>
     <br><br>
-    <br><br>
    references: {
     specific item: "#use-id"
    }

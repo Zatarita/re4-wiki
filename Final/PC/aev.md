@@ -26,7 +26,7 @@ Do research and fill this out <br><br> <br><br> <br><br> <br><br>
 ## Ladder Event
 <img align="left" src="images/Events/Ladder Event.png" width=200 height=200></img> The ladder event allows for the player to accend from one location to another. When the player [approaches the ladder](#ladder-position) the game verifies that the [player is facing the ladder](#ladder-angle). When the event activates the player will begin climbing the ladder, triggering [different camera angles](#ladder-cam-indexes) during the process. Finally once the player has reached the [desired height](#ladder-height) the game will end the animation and finish the event. <br><br> <br><br> <br><br>
 ## Use Event
-<img align="right" src="images\Events\Use Event - Use Item.png" width = 100 height = 100></img> <img align="right" src="images\Events\Use Event - Item Used.png" width = 200 height = 200></img> The use event is a way to restrict progression until a [specific item](#use-id) has been supplied to the event. <br><br> <br><br> <br><br> <br><br>
+<img align="right" src="images\Events\Use Event - Use Item.png" width = 100 height = 100></img> <img align="right" src="images\Events\Use Event - Item Used.png" width = 200 height = 200></img> The use event is a way to restrict progression until a [specific item](#use-id) has been supplied to the event. <br><br> <br><br> <br><br>
 ## Hide Event
 <img align="left" src="images/Events/Hide Event.png" width=200 height=200></img> Do research and fill this out <br><br> <br><br> <br><br> <br><br>
 
