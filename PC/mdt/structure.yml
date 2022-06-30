@@ -5,7 +5,7 @@ structure:
    comments: Count of how many languages are in the file. It is possible that this value does not equal 6. In that case The MDT only has one language inside of it and this will instead jump straight to the start of the MDT Langauge.
    default: 6
    references: {
-    MDT Langauge: "#mdt-language"
+    MDT Langauge: "#mdt-language-1"
    }
   Offsets:
    type: array
@@ -34,7 +34,7 @@ structure:
   Offsets:
    type: array
    subtype: uint32_t
-   comments: Offsets pointing to the start of each string.
+   comments: Offsets pointing to the start of each string. Relative to the start of the language
    size: Count
   Strings:
    type: array

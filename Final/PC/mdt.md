@@ -1,7 +1,7 @@
 # MDT File
 
 ## Summary
- The MDT File is responsible for the text presented to the screen throughout the game. These text dialogs are typically triggered by an [AEV event](aev.md#message-event); however, other things can trigger MDTs such as cutscenes or a [sequence](seq.md). The MDT file can contain multiple languages inside of it. Each language contains a list of encoded characters that represent the text that gets presented. These characters are determined by a [font file](fnt.md). Some of these characters aren't printed, but instead control *how* the text gets presented. Such as font color, or text justification.
+ The MDT File is responsible for the text presented to the screen throughout the game. These text dialogs are typically triggered by an [AEV event](aev.md); however, other things can trigger MDTs such as cutscenes or a [sequence](seq.md). The MDT file can contain multiple languages inside of it. Each language contains a list of encoded characters that represent the text that gets presented. These characters are determined by a [font file](fnt.md). Some of these characters aren't printed, but instead control *how* the text gets presented. Such as font color, or text justification.
 ## Header
  A MDT File is a list of [MDT Languages](#mdt-language). The header tells us how many languages there are in the file, and where to find them. Majority of the time a MDT file contains all the languages supported by the game. This is not always the case though. There is a variation of the MDT that only contains one language. These are typically found inside folders that denote their respective language. (eg *BIO4/SS/**eng***, *BIO4/SS/**jap***, etc)<br>
  > On update 1.10 Traditional and Simplified Chinese was added to the game. This means that later versions of the game have a slight altercation to the format. The update appended the two new [MDT Languages](#mdt-language) to the end of the list **without** updating the count. You can determine if you have a new MDT by checking if the first offset instead of using the count<br>
@@ -42,7 +42,7 @@
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| <span id='count'>Count</span> | uint32_t   |  | 6 | Count of how many languages are in the file. It is possible that this value does not equal 6. In that case The MDT only has one language inside of it and this will instead jump straight to the start of the [MDT Langauge](#mdt-language). |
+| <span id='count'>Count</span> | uint32_t   |  | 6 | Count of how many languages are in the file. It is possible that this value does not equal 6. In that case The MDT only has one language inside of it and this will instead jump straight to the start of the [MDT Langauge](#mdt-language-1). |
 | <span id='offsets'>Offsets</span> | array : uint32_t [Count] |  |  | Offsets pointing to the start of each language. |
 | <span id='languages'>Languages</span> | array : [MDT Language](#mdt-language-1) [Count] |  |  | The actual languages themselves. |
 | <span id='note'>Note</span> |     |  |  | The size of the array varries depending on version. For version 1.10+ the MDT has two extra offsets for Traditional and Simplified Chinese. These are just hacked onto the end, and the count is not adjusted to reflect that; however, Fixing the value causes the game to crash. For version 1.10 Count + 2 should be used. |
@@ -53,7 +53,7 @@
 | :- | :- | :-: | :- | :- |
 | <span id='unknown'>Unknown</span> | uint32_t   |  |  | Currently Unknown. Assumed vestigial data from console ports. |
 | <span id='count'>Count</span> | uint32_t   |  |  | Count of how many strings are inside this particular language. |
-| <span id='offsets'>Offsets</span> | array : uint32_t [Count] |  |  | Offsets pointing to the start of each string. |
+| <span id='offsets'>Offsets</span> | array : uint32_t [Count] |  |  | Offsets pointing to the start of each string. Relative to the start of the language |
 | <span id='strings'>Strings</span> | array : [MDT String](#mdt-string-1)[Count]  |  |  | The actual array of strings contained within the language. |
 ### *MDT String*
 

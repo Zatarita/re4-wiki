@@ -10,7 +10,7 @@ children:
      Some of these characters aren't printed, but instead control *how* the text gets presented. Such as
      font color, or text justification.\n" 
     references: {
-      AEV event: aev.md#message-event,
+      AEV event: aev.md,
       sequence: seq.md,
       font file: fnt.md,
     }
