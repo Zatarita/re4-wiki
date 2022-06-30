@@ -385,7 +385,7 @@ structure:
  Field Info:
   Field ID:
    type: uint32_t
-   comment: Max 3
+   comments: Max 3
  Ladder Event:
   Position:
    type: array

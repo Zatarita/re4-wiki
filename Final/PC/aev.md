@@ -158,7 +158,7 @@
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| <span id='field-id'>Field ID</span> | uint32_t   |  |  |  |
+| <span id='field-id'>Field ID</span> | uint32_t   |  |  | Max 3 |
 ### *Ladder Event*
 
 
