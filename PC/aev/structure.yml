@@ -143,10 +143,16 @@ structure:
     ashlee: 8
    }
    comments: Determines which entities can trigger the event.
-  "Unused  ":
+  "Unknown ":
+   type: byte
+   comments: Unknown, populated at runtime
+  "Unknown  ":
    type: array
    subtype: byte
-   size: 10
+   size: 5
+  Function Pointer:
+   type: uint32_t
+   comments: Pointer to a hard coded function (assumed to be inside the scenario) associated with the event.
   Priority:
    type: byte
    default: 3

@@ -6,8 +6,8 @@ children:
      The AEV file is used to define actions a player can take in a room. Each action is given
      a designed trigger area. When an entity is standing in the trigger area they are able to
      interact with the event. Some events happen automatically, while others require the player to press the 
-     action button to enable it. Some of the events are linked to internal functionality and thusly
-     aren't easily modable. Any event falling in this category is left out until more information 
+     action button to enable it. Some of the events are linked to hard coded internal functionality and thusly
+     aren't easily modifiable. Any event falling in this category is left out until more information 
      can be found out about them.
      <br><br><br><br><br><br><br>
 
@@ -24,7 +24,19 @@ children:
      all four points of the rectangle (x, z), the starting Y position for all the points, and the height of the trigger area; however, when the trigger volume is circular
      the game treats the first of the four points as the center of the circle (x, z); the other 3 points are unused. Instead the radius will be used.
      This determines the size and position of the trigger area. Beyond that the Y position and height are still applied the same way as the rectangular trigger area.
-     <br><br><br><br><br><br><br>
+     <br><br>
+     <img align="right" style="margin:10px" src="images\Volumes\Collision Detection - Front.png" width=100 height=100></img>
+     <img align="right" style="margin:10px" src="images\Volumes\Collision Detection - Under.png" width=100 height=100></img>
+     Beyond position there are parameters that determine *how* an volume gets triggered. The game needs to know which entities the volume targets (eg the player, enemies, ashlee).
+     When that entity enters the area it checks the hit-type to determine when the entity triggers the volume. The most simple case is when the hit-type is in front of, or directly under
+     the entity; however, the game can also be set to ensure the entity is facing a specific angle as well. The hit angle and open angle determine the facing upon which an entity can trigger the volume. 
+     This can be represented with a "fan". The hit angle deteremines the direction the fan faces, and the open angle determines the spread of the "fan".
+     <br><br>
+     Finally, once the event has been triggered, the trigger volume will check the type associated with the event. Each type has extra information to know how to do it's job.
+     These bits of extra information are called parameters, and they're stored at the end in the parameter buffer area of the event. These parameters tell the game how to handle each event.
+     Things such as where to place the player when transitioning rooms, or what item number is needed to progress. Some events don't have any modifiable parameters and rely on hard coded functions
+     instead.
+     <br><br>
 
 
      ---
@@ -38,6 +50,13 @@ children:
       "height ": "#height",
       first of the four points: "#position-1",
       radius: "#radius",
+      " type": "#type",
+      hit angle: "#hit-angle",
+      open angle: "#open-angle",
+      entities can trigger the volume: "#target-type",
+      hit-type: "#hit-type",
+      parameter buffer area: "#parameter-buffer-area",
+      hard coded functions: "#function-pointer"
     }
 
 
