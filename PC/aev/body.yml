@@ -111,9 +111,8 @@ children:
   Save Event:
    text: >
     <img align="right" src="images/Events/Save Event.png" width = 200 height = 200></img>
-    <br><br>
-    <br><br>
-    <br><br>
+    The save event allows the player to save their progress. There is only one parameter for this event type and that is terminal number. It is currently unknown
+    what the parameter modifies.
     <br><br>
     <br><br>
     <br><br>
