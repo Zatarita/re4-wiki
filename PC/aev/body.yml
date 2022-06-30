@@ -115,7 +115,7 @@ children:
     what the parameter modifies.
     <br><br>
     <br><br>
-    <br><br>
+    <br>
    references: {
     terminal number: "#terminal-number"
    }
@@ -123,8 +123,6 @@ children:
   SHD Display Event:
    text: >
     Do research and fill this out
-    <br><br>
-    <br><br>
     <br><br>
     <br><br>
     <br><br>
