@@ -9,7 +9,7 @@ structure:
    type: byte
    default: 4
    comments: Unknown what this does. Set to 4 most times.
-  Unknown 2:
+  "Unknown ":
    type: byte
    default: 1
    comments: unknown what this does. Set to 1 most times.
@@ -19,13 +19,16 @@ structure:
   Padding:
    type: array
    subtype: byte
-   size: 0xD
+   size: 0x9
   Event Entries:
    type: array
    subtype: Event
    size: Count
    comments: The array of events contained inside the room.
  Event:
+  Pointer To Next:
+   type: uint32_t
+   comments: This value is populated at run time with the offset to the next entry.
   Unknown:
    type: byte
    comments: Currently unknown
@@ -35,12 +38,12 @@ structure:
    subtype: byte
    default: 1
    options: {
-    "Square": 0,
-    "Circle": 1,
+    "Circle": 0,
+    "Square": 1,
     "Eye Trigger": 2
    }
    comments: Determines if the collision area is rectangular, or a cylindrical. Note "Eye Trigger" has been disabled; however, appears to still have some functionality.
-  Unused:
+  Pad:
    type: array
    subtype: byte
    size: 2
@@ -106,6 +109,9 @@ structure:
     Item Parent: 20
    }
    comments: Determines the event type. Each event type has different parameters inside the "buffer" area
+  Index:
+   type: byte
+   comments: Index for the current entry in the AEV. 
   Hit Type:
    type: enum
    subtype: byte
@@ -137,7 +143,7 @@ structure:
     ashlee: 8
    }
    comments: Determines which entities can trigger the event.
-  Unused:
+  "Unused  ":
    type: array
    subtype: byte
    size: 10
@@ -145,7 +151,7 @@ structure:
    type: byte
    default: 3
    comments: Max 15
-  Unused:
+  "Unused ":
    type: array
    subtype: byte
    size: 3
@@ -162,10 +168,10 @@ structure:
    type: array
    subtype: byte
    size: 8
-  Unknown:
+  "Unknown ":
    type: byte
    comments: This is used by the game at runtime.
-  Padding:
+  "Padding ":
    type: array
    subtype: byte
    size: 8
@@ -174,9 +180,6 @@ structure:
    subtype: byte
    size: 0x40
    comments: This area is multipurpose. Depending on the value of "Type" different parameters will be in here. See the different types below for the structure of each type in this buffer area.
-  unknown pointer:
-   type: uint32_t
-   comments: This is used by the game at runtime. Assumed it is a function pointer.
  Normal Event:
   Note:
    type: " "
@@ -282,6 +285,9 @@ structure:
    type: byte
    comments: Determines which sound to be pulled from the sound table.
  Jump Event:
+  Note:
+   type: " "
+   comments: This event doesn't work. The parameters are known; however, in game the event doesn't trigger.
   Position:
    type: array
    subtype: float
@@ -343,6 +349,9 @@ structure:
    type: " "
    comments: Todo
  View Control Event:
+  Note:
+   type: " "
+   comments: While the parameters are known, it doesn't appear as though this type is functional
   Position:
    type: array
    subtype: float

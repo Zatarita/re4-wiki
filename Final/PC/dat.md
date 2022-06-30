@@ -12,7 +12,7 @@ and another?
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| Count | uint32_t   |  |  | The amount of subfiles contained within the DAT. |
-| Padding | array : byte [12] |  |  |  |
-| Offsets | array : uint32_t [Count] |  |  | List of offsets pointing to the start of each chunk of data. |
-| Extensions | array : string [Count] | ['AEV', 'BIN', 'BLK', 'CAM', 'CNS', 'DCT', 'DRA', 'DSE', 'EAR', 'EAT', 'EFF', 'EMI', 'ESE', 'ESL', 'ETM', 'ETS', 'EVD', 'FCS', 'FCV', 'FNT', 'ITA', 'ITM', 'LIT', 'MDT', 'MHT', 'OSD', 'RTP', 'SAR', 'SAT', 'SEQ', 'SFD', 'SHD', 'SMD', 'SMX', 'SND', 'STB', 'TEX', 'TPL', 'UWF', 'VIB'] |  | Extension for the files. |
+| <span id='count'>Count</span> | uint32_t   |  |  | The amount of subfiles contained within the DAT. |
+| <span id='padding'>Padding</span> | array : byte [12] |  |  |  |
+| <span id='offsets'>Offsets</span> | array : uint32_t [Count] |  |  | List of offsets pointing to the start of each chunk of data. |
+| <span id='extensions'>Extensions</span> | array : string [Count] | ['AEV', 'BIN', 'BLK', 'CAM', 'CNS', 'DCT', 'DRA', 'DSE', 'EAR', 'EAT', 'EFF', 'EMI', 'ESE', 'ESL', 'ETM', 'ETS', 'EVD', 'FCS', 'FCV', 'FNT', 'ITA', 'ITM', 'LIT', 'MDT', 'MHT', 'OSD', 'RTP', 'SAR', 'SAT', 'SEQ', 'SFD', 'SHD', 'SMD', 'SMX', 'SND', 'STB', 'TEX', 'TPL', 'UWF', 'VIB'] |  | Extension for the files. |

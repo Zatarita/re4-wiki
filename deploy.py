@@ -115,7 +115,8 @@ def parseStruct(stream, path : str ):
                                 options = '[0x{}]'.format('0x'.join(hex(x)[2:].upper() for x in options))
             else: options = ""
 
-            formattedString = f"| {field} | {type} {subtype} {size} | {options} | {default} | {comments} |\n"
+            fieldLink = field.lower().replace(" ", "-")
+            formattedString = f"| <span id='{fieldLink}'>{field}</span> | {type} {subtype} {size} | {options} | {default} | {comments} |\n"
             stream.write(replaceReferences(formattedString, references))
 
 def parseDependencies(dependencies : dict):

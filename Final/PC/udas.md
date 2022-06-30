@@ -9,16 +9,16 @@ The udas is one of the [container formats](https://en.wikipedia.org/wiki/Contain
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| Magic | array : int32_t [0x8] | [0xCAB6BE200x20BEB6CA] |  |  |
-| SubFileMetadata | array : [HeaderEntry](#HeaderEntry)  |  |  | Dynamically sized array. Read until an entry with Segment Type -1 is reached. |
-| Padding | array : byte [0x400] |  |  | Header typically has anywhere from 0x3B0-0x400 bytes of padding after the last segment. |
+| <span id='magic'>Magic</span> | array : int32_t [0x8] | [0xCAB6BE200x20BEB6CA] |  |  |
+| <span id='subfilemetadata'>SubFileMetadata</span> | array : [HeaderEntry](#HeaderEntry)  |  |  | Dynamically sized array. Read until an entry with Segment Type -1 is reached. |
+| <span id='padding'>Padding</span> | array : byte [0x400] |  |  | Header typically has anywhere from 0x3B0-0x400 bytes of padding after the last segment. |
 ### *HeaderEntry*
 
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| SegmentType | enum : int32_t  | {END: -1, [DAT](dat.md): 0, [SND](snd.md): 4} |  |  |
-| Size | uint32_t   |  |  |  |
-| Unknown | uint32_t   |  |  |  |
-| Offset | uint32_t   |  |  |  |
-| Unused | array : uint32_t [4] |  | [0, 0, 0, 0] |  |
+| <span id='segmenttype'>SegmentType</span> | enum : int32_t  | {END: -1, [DAT](dat.md): 0, [SND](snd.md): 4} |  |  |
+| <span id='size'>Size</span> | uint32_t   |  |  |  |
+| <span id='unknown'>Unknown</span> | uint32_t   |  |  |  |
+| <span id='offset'>Offset</span> | uint32_t   |  |  |  |
+| <span id='unused'>Unused</span> | array : uint32_t [4] |  | [0, 0, 0, 0] |  |

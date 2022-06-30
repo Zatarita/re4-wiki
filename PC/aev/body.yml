@@ -16,15 +16,41 @@ children:
      ---
     references: {
     }
+  Trigger Volumes:
+    text: >
+     <img align="left" style="margin:10px" src="images/Volumes/Square Trigger Volume.png" width=200 height=200></img>
+     A trigger volume is a defined area where an entity can initiate an AEV event. Each event has it's own dedicated trigger volume. These volumes have extra metadata used to define it's shape 
+     and functionality. There are two primary shapes the trigger area can be, rectangular (default) and circular. When the trigger volume is rectangular the game reads 
+     all four points of the rectangle (x, z), the starting Y position for all the points, and the height of the trigger area; however, when the trigger volume is circular
+     the game treats the first of the four points as the center of the circle (x, z); the other 3 points are unused. Instead the radius will be used.
+     This determines the size and position of the trigger area. Beyond that the Y position and height are still applied the same way as the rectangular trigger area.
+     <br><br><br><br><br><br><br>
+
+
+     ---
+    references: {
+      entity: "#target-type",
+      metadata: "#event",
+      "shape ": "#area-hit-type",
+      functionality: "#active",
+      four points of the rectangle: "#position-1",
+      Y position: "#y-position",
+      "height ": "#height",
+      first of the four points: "#position-1",
+      radius: "#radius",
+    }
+
+
   Door Event:
     text: 
      <img align="left" style="margin:10px" src="images/Events/Door Event.png" width = 200 height = 200></img>
-     The Door event is used to transition between rooms. When activating a door event the game checks the parameters supplied and will play a designated "Open Sound"
-     from the room's sound table and attempt to load the Next Room in the Next Stage. It will then place the player in the desired Position and Facing (or Room Part) 
+     The Door event is used to transition between rooms. When activating a door event the game checks the parameters supplied. It will play a designated "Open Sound"
+     from the room's sound table and attempt to load the Next Room in the Next Stage. It will then place the player in the desired Position and Facing 
      supplied in the event parameters. Some doors might be locked. In this case the event must have a lock flag assigned that signifies the current locked state of 
      the door. This is stored internally by the game. There are a maximum of 0x3f flags reserved for this purpose. They are stored along with other player information 
      during save. (Validation needed) Doors locked in this manor have a sister door that toggles the locked flag by unlocking it. typically the "other side" of the door. 
-     In the event the door is unlocked. The game checks the parameters of the event to pull a sound from the room sound table for unlocking the door.
+     In the event the door is unlocked. The game checks the parameters of the event to pull a sound from the room sound table for unlocking the door. Then it will toggle
+     the locked flag.
      <br><br><br>
 
 
