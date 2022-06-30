@@ -104,6 +104,7 @@ children:
    references: {
     which soundbank to use: "#sound-effect-type",
     sound that is to be played: "#sound-effect-number",
-    camera's focus: "#camera-number"
+    camera's focus: "#camera-number",
+    MDT: "#mdt.md"
    }
     
