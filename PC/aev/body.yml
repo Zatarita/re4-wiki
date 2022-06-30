@@ -163,6 +163,7 @@ children:
     
   Ladder Event:
    text: >
+    <br>
     <img align="left" src="images/Events/Ladder Event.png" width = 200 height = 200></img>
     The ladder event allows for the player to accend from one location to another. When the player approaches the ladder the game verifies that the player is
     facing the ladder. Then when the event activates the player will begin climbing the ladder, triggering different camera angles during the process. Finally once the player
