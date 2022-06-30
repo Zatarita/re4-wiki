@@ -433,10 +433,10 @@ structure:
    comments: 4 points that make up the Hiding Position area
   Hiding Position Y:
    type: float
-   comment: Y coordinate of the Hiding Position
+   comments: Y coordinate of the Hiding Position
   Height:
    type: float
-   comment: Height of the Hiding Position
+   comments: Height of the Hiding Position
   Hiding Area:
    type: array
    subtype: float

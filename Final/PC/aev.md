@@ -184,6 +184,6 @@
 | <span id='hide-area-set'>Hide Area Set</span> | byte   | 1 | 1 | Flag is set so long as there is a Hide Area assigned |
 | <span id='active'>Active</span> | byte   |  |  | Use internally by the game to determine if ashlee is currently hiding in the area. If she is hiding the value is 2 |
 | <span id='hiding-position'>Hiding Position</span> | array : float [8] |  |  | 4 points that make up the Hiding Position area |
-| <span id='hiding-position-y'>Hiding Position Y</span> | float   |  |  |  |
-| <span id='height'>Height</span> | float   |  |  |  |
+| <span id='hiding-position-y'>Hiding Position Y</span> | float   |  |  | Y coordinate of the Hiding Position |
+| <span id='height'>Height</span> | float   |  |  | Height of the Hiding Position |
 | <span id='hiding-area'>Hiding Area</span> | array : float [3] |  |  | Position (x, y, z) of the hiding area |
