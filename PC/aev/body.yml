@@ -81,9 +81,7 @@ children:
      <br><br><br>
 
 
-     ---
-
-     
+     ---<br><br>
     references: {
       parameters: "#door-event-1",
       #Part: TODO
