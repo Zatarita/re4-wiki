@@ -129,5 +129,21 @@ children:
     <br><br>
     <br><br>
     <br><br>
+
+  Damage Event:
+   text: >
+    <img align="right" src="images/Events/Damage Event.png" width = 200 height = 200></img>
+    When this event is triggered any entity that the event is targeting will have a specific type of damage applied to them periodically. When the damage gets applied the game checks the damage
+    type and picks an animation appropriate for the type. If the "damage angle set" flag is enabled the game will check for a specified knock back angle and push the player that direction.
+    It is worth noting that damage type 6 seems to be the only type capable of killing the player. More research is needed on the "damage die flag".
+   references: {
+    event is targeting: "#target-type",
+    specific type: "#damage-type",
+    damage type: "#damage-type",
+    periodically: "#damage-timer",
+    knock back angle: "#damage-angle",
+    damage die flag: "#flags",
+    damage angle set: "#flags"
+   }
     
     

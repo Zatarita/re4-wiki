@@ -17,6 +17,8 @@
 <img align="right" src="images/Events/Save Event.png" width = 200 height = 200></img> The save event allows the player to save their progress. There is only one parameter for this event type and that is [terminal number](#terminal-number). It is currently unknown what the parameter modifies. <br><br> <br><br> <br><br>
 ## SHD Display Event
 Do research and fill this out <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+## Damage Event
+<img align="right" src="images/Events/Damage Event.png" width = 200 height = 200></img> When this event is triggered any entity that the [event is targeting](#target-type) will have a [specific type](#damage-type) of damage applied to them [periodically](#damage-timer). When the damage gets applied the game checks the [damage type](#damage-type) and picks an animation appropriate for the type. If the "[damage angle set](#flags)" flag is enabled the game will check for a specified [knock back angle](#damage-angle) and push the player that direction. It is worth noting that [damage type](#damage-type) 6 seems to be the only type capable of killing the player. More research is needed on the "[damage die flag](#flags)".
 
 ## Structure
 ### *Header*
