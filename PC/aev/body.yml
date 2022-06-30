@@ -90,3 +90,8 @@ children:
     flag number: "#flag-number",
     "Room flags, Room-Save Flags, and Scenario flags": "#flag-id"
    }
+  
+  Message Event:
+   text: >
+    <img align="left" src="images/Events/Message Event.png" width = 200 height = 200></img>
+    
