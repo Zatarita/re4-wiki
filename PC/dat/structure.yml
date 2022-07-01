@@ -33,5 +33,5 @@ structure:
     type: array
     subtype: Bytes
     size: " "
-    comments: The raw data for a subfile contained in the DAT. Size is calculated using the offsets. offset[i+1] - offset[i] will equal the size of the chunk. (or offset[i] through the end of file)
+    comments: The raw data for a subfile contained in the DAT. Size is calculated using the offsets. offset[i+1] - offset[i] will equal the size of the chunk. (or offset[i] through the end of file for the last chunk)
 
