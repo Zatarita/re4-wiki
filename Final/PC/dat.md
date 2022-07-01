@@ -15,11 +15,11 @@ and another?
 | <span id='count'>Count</span> | uint32_t   |  |  | The amount of subfiles contained within the DAT. |
 | <span id='padding'>Padding</span> | array : byte [12] |  |  |  |
 | <span id='offsets'>Offsets</span> | array : uint32_t [Count] |  |  | List of offsets pointing to the start of each chunk of data. |
-| <span id='extensions'>Extensions</span> | array : string [Count] | ['AEV', 'BIN', 'BLK', 'CAM', 'CNS', 'DCT', 'DRA', 'DSE', 'EAR', 'EAT', 'EFF', 'EMI', 'ESE', 'ESL', 'ETM', 'ETS', 'EVD', 'FCS', 'FCV', 'FNT', 'ITA', 'ITM', 'LIT', 'MDT', 'MHT', 'OSD', 'RTP', 'SAR', 'SAT', 'SEQ', 'SFD', 'SHD', 'SMD', 'SMX', 'SND', 'STB', 'TEX', 'TPL', 'UWF', 'VIB'] |  | Extension for the files. |
-| <span id='files'>Files</span> | array : File Data  |  |  | The raw data for the contained files. |
+| <span id='extensions'>Extensions</span> | array : string [Count] | ['AEV', 'BIN', 'BLK', 'CAM', 'CNS', 'DCT', 'DRA', 'DSE', 'EAR', 'EAT', 'EFF', 'EMI', 'ESE', 'ESL', 'ETM', 'ETS', 'EVD', 'FCS', 'FCV', 'FNT', 'ITA', 'ITM', 'LIT', 'MDT', 'MHT', 'OSD', 'RTP', 'SAR', 'SAT', 'SEQ', 'SFD', 'SHD', 'SMD', 'SMX', 'SND', 'STB', 'TEX', 'TPL', 'UWF', 'VIB'] |  | List of extension for the files. |
+| <span id='files'>Files</span> | array : File Data [Count] |  |  | List of raw data for the contained files. |
 ### *File Data*
 
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| <span id='file'>File</span> | array : Bytes Array [Count] |  |  | The list of files contained inside the DAT file. |
+| <span id='file'>File</span> | array : Bytes [ ] |  |  | The raw data for a subfile contained in the DAT. Size is calculated using the offsets. offset[i+1] - offset[i] will equal the size of the chunk. (or offset[i] through the end of file) |
