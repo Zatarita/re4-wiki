@@ -1,22 +1,24 @@
 title: DAT
 children: 
   Summary:
-    text: "
+    text: >
+     <img align="left" src="images\DAT_Subfiles.png" width = 200 height = 200></img>
      The DAT file is one of the primary container formats used by the game. Contained within the DAT files are other subfiles. 
      The content of the subfiles can vary from *visual* assets such as models or textures, to more *abstract* functionality such as 
      the events that trigger in a room. The DAT file has seen a few variations between versions; 
      however, it is fairly ubiquitous and an important format. By modifying the subfiles inside of the DAT file we 
-     are able to change the behaviour of the game.\n"
+     are able to change the behaviour of the game.<br>
     references: {
       container formats : "https://en.wikipedia.org/wiki/Container_format_(computing)",
       subfiles : "#subfiles"
     }
   Header:
-   text: "
-   The Header of the file contains all the metadata about the file. Things such as how many subfiles are contained inside the DAT, what type
-   of files they are, and where to find the data. Using this information the game navigates the dat file to load the assets needed
-   for a room to function properly.\n
-   "
+   text: >
+    <img align="right" src="images\DAT_header_hex.png" width = 200 height = 200></img>
+    The Header of the file contains all the metadata about the file. Things such as how many subfiles are contained inside the DAT, what type
+    of files they are, and where to find the data. Using this information the game navigates the dat file to load the assets needed
+    for a room to function properly. <br><br><br>
+   
    references: {
     how many : "#count",
     type: "#extensions",
@@ -69,7 +71,8 @@ children:
      - VIB - Controller vibration definitions<br>\n"
 
     references: {
-      AEV: "aev.md"
+      AEV: "aev.md",
+      MDT: "mdt.md"
     }
   
   Credit:

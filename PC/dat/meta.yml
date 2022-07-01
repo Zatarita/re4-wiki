@@ -4,7 +4,11 @@ out: PC/
 tags: [Container]
 version: ["PC - UHD", "PC - 2007", "ps2", "gamecube"]
 extension: [".dat", ".das"]
-dependencies: null
+
+dependencies: {
+  PC\dat\images\DAT_Subfiles.png : PC\images\DAT_Subfiles.png,
+  PC\dat\images\DAT_header_hex.png : PC\images\DAT_header_hex.png
+}
 
 tools: ["SoP - Toolset", "Mariokart64n - Udas Tool"]
 endianness: [little]
