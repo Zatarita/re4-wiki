@@ -19,19 +19,19 @@ structure:
     type: array
     subtype: string
     options: [AEV, BIN, BLK, CAM, CNS, DCT, DRA, DSE, EAR, EAT, EFF, EMI, ESE, ESL, ETM, ETS, EVD, FCS, FCV, FNT, ITA, ITM, LIT, MDT, MHT, OSD, RTP, SAR, SAT, SEQ, SFD, SHD, SMD, SMX, SND, STB, TEX, TPL, UWF, VIB]
-    comments: Extension for the files.
+    comments: List of extension for the files.
     size: Count
   
   Files:
     type: array
-    count: Count
+    size: Count
     subtype: File Data
-    comments: The raw data for the contained files.
+    comments: List of raw data for the contained files.
 
  File Data:
   File:
     type: array
-    subtype: Bytes Array
-    size: Count
-    comments: The list of files contained inside the DAT file. 
+    subtype: Bytes
+    size: " "
+    comments: The raw data for a subfile contained in the DAT. Size is calculated using the offsets. offset[i+1] - offset[i] will equal the size of the chunk. (or offset[i] through the end of file)
 
