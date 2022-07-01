@@ -1,0 +1,34 @@
+title: FNT
+children: 
+  Summary:
+    text: "
+    <img align='left' style='margin:10px' src='images/example.png' width=200 height=200></img>
+    The Font file is responsible for defining the symbols that get presented to the screen for various languages.
+    There can be multiple font files being used for different circumstances. This is useful for languages that contain 
+    thousands of characters.\n\n
+
+    The Font file works together with the MDT to create text dialogs for the player to interact with
+    during gameplay, menus, and cutscenes.
+    <br><br><br><br><br>\n\n
+    "
+    references: {
+      MDT: "mdt.md"
+    }
+  Header:
+    text: "
+    The header to a font file tells the game where to find the sprite sheet and spacing definitions. The sprite sheet
+    and spacing definitions work together to define how the characters get presented to the screen. On the PC version of
+    the game, for latin based languages, there also appears to be extra data in the header that has an unknown purpose.
+    <sup>(suggest and edit)</sup>\n\n
+    "
+    references: {
+      where to find: "#sprite-sheet-offset",
+      sprite sheet: "#sprite-sheet",
+      spacing definitions: "#spacing-definitions",
+      suggest and edit: "",
+      unknown purpose: "#unknown"
+    }
+  Font Spacing:
+    text: "
+    <img align='right' style='margin:10px; background-size: cover;' src='images/Font Spacing.png' width=200 height=200></img>
+    "

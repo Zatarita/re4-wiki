@@ -1,0 +1,21 @@
+type: Filetype
+name: fnt
+out: PC/
+tags: [Container]
+version: ["all"]
+extension: [".fnt"]
+
+dependencies: {
+  PC\fnt\images\example.png : PC\images\example.png,
+  PC\fnt\images\Font Spacing.png : PC\images\Font Spacing.png,
+}
+
+tools: []
+endianness: [little]
+
+image: null
+compression: null
+structure: PC/fnt/structure.yml
+body: [PC/fnt/body.yml]
+
+references: [udas]

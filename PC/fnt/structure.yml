@@ -1,0 +1,47 @@
+structure:
+ Header:
+  Sprite Sheet Offset:
+    type: uint32_t
+    comments: The offset that points to the start of the TPL that defines the font's sprite sheet.
+    references: {
+      TPL: "tpl.md"
+      }
+    
+  Spacing Offset:
+    type: uint32_t
+    comments: The offset that points to the start of the font spacing definitions.
+    references: {
+      font spacing definitions: "#spacing-definitions"
+      }
+
+  Unknown:
+    type: array
+    size: 6
+    type: uint32_t
+    comments: Unknown what these bytes do; however, they only seem to be set on the pc version of the game for the latin based symbols.
+
+  Sprite Sheet:
+    type: TPL
+    comments: The sprite sheet holding the actual font symbols that gets presented to screen.
+    references: {
+      TPL: "tpl.md"
+      }
+  
+  Spacing Defininitions:
+    type: array
+    subtype: Font Spacing
+    size: "n"
+    comments: The size of the array appears to be the Spacing Offset through the end of file. There also seems to be no bounds checking at runtime.
+    references: {
+      Spacing Offset: "#spacing-offset",
+      Font Spacing: "#font-spacing"
+      }
+
+ Font Spacing:
+   Left Margin:
+    type: byte
+    comments: Number of pixels between left border of the sprite and the beginning of the character.
+
+   Length:
+    type: byte
+    comments: Number of pixels starting after the Left Margin going to the end of the symbol's cell. (with some variation)
