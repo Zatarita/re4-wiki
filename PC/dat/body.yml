@@ -17,7 +17,7 @@ children:
     <img align="right" src="images\DAT_header_hex.png" width = 200 height = 200></img>
     The Header of the file contains all the metadata about the file. Things such as how many subfiles are contained inside the DAT, what type
     of files they are, and where to find the data. Using this information the game navigates the dat file to load the assets needed
-    for a room to function properly. <br><br><br><br><br>
+    for a room to function properly. <br><br><br><br><br><br>
    
    references: {
     how many : "#count",
