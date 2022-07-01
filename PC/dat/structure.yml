@@ -22,3 +22,10 @@ structure:
     comments: Extension for the files.
     size: Count
 
+ File Data:
+  File:
+    type: array
+    subtype: Bytes Array
+    size: Count
+    comments: The list of files contained inside the DAT file. 
+
