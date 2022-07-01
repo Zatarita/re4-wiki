@@ -9,7 +9,7 @@ children:
      action button to enable it. Some of the events are linked to hard coded internal functionality and thusly
      aren't easily modifiable. Any event falling in this category is left out until more information 
      can be found out about them.
-     <br><br><br><br>
+     <br><br><br>
     references: {
     }
   Trigger Volumes:
