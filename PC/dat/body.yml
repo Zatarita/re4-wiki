@@ -26,7 +26,7 @@ children:
    }
   Subfiles:
     text: 
-     "Contained inside the DAT file are other sub files, each with their own purpose. Some of these subfiles are required for the room to function. Other subfiles
+     "Contained inside the DAT file are other subfiles, each with their own purpose. Some of these subfiles are required for the room to function. Other subfiles
      are supplimentry and allow for us to use certain functionality inside the room.
      <br><br>\n
      - AEV - Area Event Volumes are areas where a player can trigger an event used to progress the story in a room. <br>\n

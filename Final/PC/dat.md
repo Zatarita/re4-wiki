@@ -5,7 +5,7 @@
 ## Header
 <img align="right" src="images\DAT_header_hex.png" width = 200 height = 200></img> The Header of the file contains all the metadata about the file. Things such as [how many](#count) subfiles are contained inside the DAT, what [type](#extensions) of files they are, and [where to find](#offsets) the data. Using this information the game navigates the dat file to load the assets needed for a room to function properly. <br><br><br><br><br>
 ## Subfiles
-Contained inside the DAT file are other sub files, each with their own purpose. Some of these subfiles are required for the room to function. Other subfiles are supplimentry and allow for us to use certain functionality inside the room. <br><br>
+Contained inside the DAT file are other subfiles, each with their own purpose. Some of these subfiles are required for the room to function. Other subfiles are supplimentry and allow for us to use certain functionality inside the room. <br><br>
  - [AEV](aev.md) - Area Event Volumes are areas where a player can trigger an event used to progress the story in a room. <br>
  - BIN - 3D Model asset used in the room.<br>
  - BLK - Block loading, used in r002, and r100. Rooms that use this method of loading data also have supporting dat files with suffix _00x.dat<br>
