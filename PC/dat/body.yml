@@ -15,7 +15,7 @@ children:
    text: "
    The Header of the file contains all the metadata about the file. Things such as how many subfiles are contained inside the DAT, what type
    of files they are, and where to find the data. Using this information the game navigates the dat file to load the assets needed
-   for a room to function properly.
+   for a room to function properly.\n
    "
    references: {
     how many : "#count",

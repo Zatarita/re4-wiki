@@ -3,7 +3,8 @@
 ## Summary
  The DAT file is one of the primary [container formats](https://en.wikipedia.org/wiki/Container_format_(computing)) used by the game. Contained within the DAT files are other [subfiles](#subfiles). The content of the [subfiles](#subfiles) can vary from *visual* assets such as models or textures, to more *abstract* functionality such as the events that trigger in a room. The DAT file has seen a few variations between versions; however, it is fairly ubiquitous and an important format. By modifying the [subfiles](#subfiles) inside of the DAT file we are able to change the behaviour of the game.
 ## Header
- The Header of the file contains all the metadata about the file. Things such as [how many](#count) subfiles are contained inside the DAT, what [type](#extensions) of files they are, and [where to find](#offsets) the data. Using this information the game navigates the dat file to load the assets needed for a room to function properly. ## Subfiles
+ The Header of the file contains all the metadata about the file. Things such as [how many](#count) subfiles are contained inside the DAT, what [type](#extensions) of files they are, and [where to find](#offsets) the data. Using this information the game navigates the dat file to load the assets needed for a room to function properly.
+ ## Subfiles
 Contained inside the DAT file are other sub files, each with their own purpose. Some of these subfiles are required for the room to function. Other subfiles are supplimentry and allow for us to use certain functionality inside the room. <br><br>
  - [AEV](aev.md) - Area Event Volumes are areas where a player can trigger an event used to progress the story in a room. <br>
  - BIN - 3D Model asset used in the room.<br>
