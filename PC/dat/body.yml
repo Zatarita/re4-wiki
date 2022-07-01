@@ -12,11 +12,11 @@ children:
       subfiles : "#subfiles"
     }
   Subfiles:
-    text: >
-     Contained inside the DAT file are other sub files, each with their own purpose. Some of these subfiles are required for the room to function. Other subfiles
+    text: 
+     "Contained inside the DAT file are other sub files, each with their own purpose. Some of these subfiles are required for the room to function. Other subfiles
      are supplimentry and allow for us to use certain functionality inside the room.
      <br><br>
-     * AEV - This subfile holds room events<br>\n
+     * AEV - This subfile holds room events<br>
      * BIN - 3D Model asset used in the room.<br>
      * BLK - Block loading, used in r002, and r100. Rooms that use this method of loading data also have supporting dat files with suffix _00x.dat<br>
      * CAM - Defines how the camera behaves in designated areas.<br>
@@ -55,7 +55,7 @@ children:
      * TEX - **TODO**<br>
      * TPL - Texture Palette Library is a container that can hold multiple textures used by various assets in a scene. <br>
      * UWF - **TODO**<br>
-     * VIB - Controller vibration definitions<br>
+     * VIB - Controller vibration definitions<br>"
   
   Credit:
    text: >
