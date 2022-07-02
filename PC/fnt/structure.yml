@@ -11,7 +11,7 @@ structure:
     type: uint32_t
     comments: The offset that points to the start of the font spacing definitions.
     references: {
-      font spacing definitions: "#spacing-definitions"
+      font spacing definitions: "#font-spacing"
       }
 
   Unknown:
@@ -34,7 +34,7 @@ structure:
     comments: The size of the array appears to be the Spacing Offset through the end of file. There also seems to be no bounds checking at runtime.
     references: {
       Spacing Offset: "#spacing-offset",
-      Font Spacing: "#font-spacing"
+      Font Spacing: "#font-spacing-1"
       }
 
  Font Spacing:

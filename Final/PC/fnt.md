@@ -21,10 +21,10 @@ The Font file works together with the [MDT](mdt.md) to create text dialogs for t
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | <span id='sprite-sheet-offset'>Sprite Sheet Offset</span> | uint32_t   |  |  | The offset that points to the start of the [TPL](tpl.md) that defines the font's sprite sheet. |
-| <span id='spacing-offset'>Spacing Offset</span> | uint32_t   |  |  | The offset that points to the start of the [font spacing definitions](#spacing-definitions). |
+| <span id='spacing-offset'>Spacing Offset</span> | uint32_t   |  |  | The offset that points to the start of the [font spacing definitions](#font-spacing). |
 | <span id='unknown'>Unknown</span> | uint32_t  [6] |  |  | Unknown what these bytes do; however, they only seem to be set on the pc version of the game for the latin based symbols. |
 | <span id='sprite-sheet'>Sprite Sheet</span> | [TPL](tpl.md)   |  |  | The sprite sheet holding the actual font symbols that gets presented to screen. |
-| <span id='spacing-defininitions'>Spacing Defininitions</span> | array : [Font Spacing](#font-spacing) [n] |  |  | The size of the array appears to be the [Spacing Offset](#spacing-offset) through the end of file. There also seems to be no bounds checking at runtime. |
+| <span id='spacing-defininitions'>Spacing Defininitions</span> | array : [Font Spacing](#font-spacing-1) [n] |  |  | The size of the array appears to be the [Spacing Offset](#spacing-offset) through the end of file. There also seems to be no bounds checking at runtime. |
 ### *Font Spacing*
 
 
