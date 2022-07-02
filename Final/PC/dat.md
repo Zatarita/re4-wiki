@@ -43,7 +43,7 @@ Contained inside the DAT file are other subfiles, each with their own purpose. S
  - SND - Room Sound Definitions<br>
  - STB - Sound Table<br>
  - TEX - **TODO**<br>
- - TPL - Texture Palette Library is a container that can hold multiple textures used by various assets in a scene. <br>
+ - [TPL](tpl.md) - Texture Palette Library is a container that can hold multiple textures used by various assets in a scene. <br>
  - UWF - **TODO**<br>
  - VIB - Controller vibration definitions<br>
 ## Credit

@@ -107,7 +107,7 @@ structure:
  ImagePack Reference:
   ImagePack ID:
    type: uint32_t
-   comments: A reference to the ImagePack used in the PC version of the game that holds a collection of textures. The ImagePack ID in hex **is** the name of the file found in *ImagePackHD/0x_______"
+   comments: A reference to the ImagePack used in the PC version of the game that holds a collection of textures. The ImagePack ID in hex **is** the name of the file found in "ImagePackHD/0x_______"
   ImagePack Index:
    type: uint32_t
    comments: Since the ImagePack can contain multiple textures, this specifiies which texture to use from the ImagePack.
