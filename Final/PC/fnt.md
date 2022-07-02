@@ -7,10 +7,11 @@
 The Font file works together with the [MDT](mdt.md) to create text dialogs for the player to interact with during gameplay, menus, and cutscenes. <br><br><br><br><br>
 
  ## Header
- The header to a font file tells the game [where to find](#sprite-sheet-offset) the [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions). The [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions) work together to define how the characters get presented to the screen. On the PC version of the game, for latin based languages, there also appears to be extra data in the header that has an [unknown purpose](#unknown). <sup>([suggest and edit]())</sup>
+ The header to a font file tells the game [where to find](#sprite-sheet-offset) the [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions). The [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions) work together to define how the characters get presented to the screen. On the PC version of the game, for latin based languages, there also appears to be extra data in the header that has an [unknown purpose](#unknown). <sup>(suggest an edit)</sup>
 
  ## Font Spacing
- <img align='right' style='margin:10px; background-size: cover;' src='images/Font Spacing.png' width=200 height=200></img> 
+ <img align='right' style='margin:10px; background-size: cover;' src='images/Font Spacing.png' width=200 height=200></img> The font spacing determines the margins of the font lettering. There are two bytes that determine the [distance from the start](#left-margin) of the sprite sheet's cell, and the [length](#length) in pixels till the end of the symbol. These two pieces work together to 'cut' the symbol out of the sprite sheet. Typically these values add together to the full cell size. (which can varry from sprite sheet to sprite sheet) Though, the symbol can use less than the full cell periodically.
+<br><br><br><br><br> 
 ## Structure
 ### *Header*
 
