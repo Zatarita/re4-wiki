@@ -1,0 +1,113 @@
+structure:
+ Header:
+  Identifier:
+   type: enum
+   subtype: uint32_t
+   options: {
+    "Nintendo": "0x0020AF30", 
+    "PS2": "0x00001000",
+    "PC ": "0x12345678",
+    "PC": "0x78563412"
+    }
+   hex: True
+   comments: Magic used to identify file type. 
+  Texture Count:
+   type: uint32_t
+   comments: Denotes how many images are contained within the tpl.
+  Image Offset Table:
+   type: array
+   size: Texture Count
+   subtype: Texture Offsets
+   comments: Table holding the metadata for each texture in the TPL.
+   references: {
+    Texture Offsets: "#texture-offsets"
+   }
+  
+ Texture Offsets:
+  Texture Header Offset:
+   type: uint32_t
+   comments: Offset pointing to this texture's metadata.
+   references: {
+    Texture Header: "#texture-header"
+   }
+  Palette Header Offset:
+   type: uint32_t
+   comments: Offset pointing to this texture's palette header. Can be null.
+   references: {
+    Palette Header: "#palette-header"
+   }
+
+ Texture Header:
+  Height:
+   type: uint32_t
+   comments: Height of the texture in pixels.
+  Width:
+   type: uint32_t
+   comments: Width of the texture in pixels.
+  Format: 
+   type: enum
+   subtype: uint32_t
+   options: {
+    "I4": 0,
+    "I8": 1,
+    "I4A4": 2,
+    "I8A8": 3,
+    "R5G6B5": 4,
+    "R4G5B4A3": 5,
+    "R8G8B8A8": 6,
+    "P4": 8,
+    "P8": 9,
+    "P16": 0xA,
+    "CMPR": 0xE,
+   }
+   comments: The format of the pixel data.
+  Texture Data Address:
+   type: uint32_t
+   comments: On PC this points to data that tells the game which Texture Index to use from a specified ImagePack ID. On console this address points to the raw pixel data.
+   references: {
+    Texture Index: "#imagepack-index",
+    points to data: "#imagepack-reference",
+    ImagePack ID: "#imagepack-id"
+   }
+  WrapS:
+   type: uint32_t
+  WrapT:
+   type: uint32_t
+  Min Filter:
+   type: uint32_t
+  Mag Filter:
+   type: uint32_t
+  LOD Bias:
+   type: Float
+  Edge LOD Enable: 
+   type: byte
+  Min LOD:
+   type: byte
+  Max LOD:
+   type: byte
+  Unpacked:
+   type: byte
+
+ Palette Header:
+  Entry Count:
+   type: uint16_t
+  Unpacked:
+   type: "bool : uint16_t"
+  Palette Format:
+   type: enum
+   subtype: uint32_t
+   options: {
+    "I8A8": 0,
+    "R5G6B5" : 1,
+    "R4G5B4A3" : 2
+   }
+  Palette Data Address:
+   type: uint32_t
+
+ ImagePack Reference:
+  ImagePack ID:
+   type: uint32_t
+   comments: A reference to the ImagePack used in the PC version of the game that holds a collection of textures. The ImagePack ID in hex **is** the name of the file found in *ImagePackHD/0x_______"
+  ImagePack Index:
+   type: uint32_t
+   comments: Since the ImagePack can contain multiple textures, this specifiies which texture to use from the ImagePack.

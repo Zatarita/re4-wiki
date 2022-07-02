@@ -1,0 +1,16 @@
+type: Filetype
+name: tpl
+out: PC/
+tags: [Texture, Image, Image Pack]
+version: [PC]
+extension: [".tpl"]
+dependencies: null
+
+tools: null
+endianness: [little, big]
+
+compression: null
+structure: PC/tpl/structure.yml
+body: [PC/tpl/body.yml]
+
+references: [dat]
