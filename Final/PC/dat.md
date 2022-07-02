@@ -26,11 +26,11 @@ Contained inside the DAT file are other subfiles, each with their own purpose. S
  - FCS - **TODO**<br>
  - FCV - Animation file<br>
  - FSE - Foot Sound Effect<br>
- - FNT - Font file. Defines the symbols the [MDT](mdt.md) file uses to present text to the screen.<br>
+ - [FNT](fnt.md) - Font file. Defines the symbols the [MDT](mdt.md) file uses to present text to the screen.<br>
  - ITA - Positions for ITM entries<br>
  - ITM - Item definitions<br>
  - LIT - Light definitions. Works together with the CAM to light a scene.<br>
- - [MDT](mdt.md) - Message Dialog Text works together with a FNT file to create interactable dialogs on screen.<br>
+ - [MDT](mdt.md) - Message Dialog Text works together with a [FNT](fnt.md) file to create interactable dialogs on screen.<br>
  - OSD - Null file<br>
  - RTP - Route points. Path NPCs and enemies follow to navigate the room.<br>
  - SAR - **TODO**<br>
