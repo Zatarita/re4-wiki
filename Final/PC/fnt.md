@@ -1,17 +1,19 @@
 # FNT
 
 ## Summary
- <img align='left' style='margin:10px' src='images/example.png' width=200 height=200></img> The Font file is responsible for defining the symbols that get presented to the screen for various languages. There can be multiple font files being used for different circumstances. This is useful for languages that contain thousands of characters.
+ <img align='left' style='margin:10px' src='images/Events/Message Event.png' width=200 height=200></img> The Font file is responsible for defining the symbols that get presented to the screen for various languages. There can be multiple font files being used for different circumstances. 
 
 
-The Font file works together with the [MDT](mdt.md) to create text dialogs for the player to interact with during gameplay, menus, and cutscenes. <br><br><br><br><br>
+The Font file works together with the [MDT](mdt.md) to create text dialogs for the player to interact with during gameplay, menus, and cutscenes. <br><br><br><br><br><br>
 
  ## Header
- The header to a font file tells the game [where to find](#sprite-sheet-offset) the [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions). The [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions) work together to define how the characters get presented to the screen. On the PC version of the game, for latin based languages, there also appears to be extra data in the header that has an [unknown purpose](#unknown). <sup>(suggest an edit)</sup>
-
+ <img align='right' style='margin:10px; background-size: cover;' src='images/Font Header.png' width=200 height=200></img> The header to a font file tells the game [where to find](#sprite-sheet-offset) the [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions). The [sprite sheet](#sprite-sheet) and [spacing definitions](#spacing-definitions) work together to define how the characters get presented to the screen. On the PC version of the game, for latin based languages, there also appears to be extra data in the header that has an [unknown purpose](#unknown). <sup>([suggest an edit](https://github.com/Zatarita/re4-wiki/issues/new?title=update-FNT-Unknown))</sup><br><br><br><br><br><br>
+ ## Sprite Sheet
+ <img align='left' style='margin:10px' src='images/example.png' width=200 height=200></img> The sprite sheet is a [texture](tpl.md) used by the game that holds the actual pixel data that makes up the font symbols. There are multiple sprite sheets used throughout the game for multiple languages. By spltiting up the sprite sheet this way languages that have thousands of symbols, such as Japanese or Chinese, can be narrowed down to only contain the symbols required for their inteded purpose.
+ <br><br> Some symbols don't represent a number or letter, but represent a button a player can press. These are called during quicktime events/ 'how to play' manuals. Some of these symbols span two cells of a sprite sheet. In this case the [font spacing](#font-spacing) is used to stitch the two cells together. <br><br> <br><br> <br><br>
  ## Font Spacing
- <img align='right' style='margin:10px; background-size: cover;' src='images/Font Spacing.png' width=200 height=200></img> The font spacing determines the margins of the font lettering. There are two bytes that determine the [distance from the start](#left-margin) of the sprite sheet's cell, and the [length](#length) in pixels till the end of the symbol. These two pieces work together to 'cut' the symbol out of the sprite sheet. Typically these values add together to the full cell size. (which can varry from sprite sheet to sprite sheet) Though, the symbol can use less than the full cell periodically.
-<br><br><br><br><br> 
+ <img align='right' style='margin:10px' src='images/Font Spacing.png' width=200 height=200></img> The font spacing determines the margins of the font lettering. There are two bytes that determine the [distance from the start](#left-margin) of the sprite sheet's cell, and the [length](#length) in pixels till the end of the symbol. These two pieces work together to 'cut' the symbol out of the sprite sheet. Typically these values add together to the full cell size. (which can vary from sprite sheet to sprite sheet) Though, the symbol can use less than the full cell periodically.
+<br><br> Some font symbols span two cells. In this case the [length](#length) can be extended to include the two symbols as one. <br><br><br><br><br> 
 ## Structure
 ### *Header*
 

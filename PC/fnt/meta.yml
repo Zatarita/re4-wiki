@@ -8,6 +8,7 @@ extension: [".fnt"]
 dependencies: {
   PC\fnt\images\example.png : PC\images\example.png,
   PC\fnt\images\Font Spacing.png : PC\images\Font Spacing.png,
+  PC\fnt\images\Font Header.png : PC\images\Font Header.png,
 }
 
 tools: []

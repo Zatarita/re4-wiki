@@ -2,39 +2,59 @@ title: FNT
 children: 
   Summary:
     text: "
-    <img align='left' style='margin:10px' src='images/example.png' width=200 height=200></img>
+    <img align='left' style='margin:10px' src='images/Events/Message Event.png' width=200 height=200></img>
     The Font file is responsible for defining the symbols that get presented to the screen for various languages.
-    There can be multiple font files being used for different circumstances. This is useful for languages that contain 
-    thousands of characters.\n\n
+    There can be multiple font files being used for different circumstances. \n\n
 
     The Font file works together with the MDT to create text dialogs for the player to interact with
     during gameplay, menus, and cutscenes.
-    <br><br><br><br><br>\n\n
+    <br><br><br><br><br><br>\n\n
     "
     references: {
       MDT: "mdt.md"
     }
   Header:
     text: "
+    <img align='right' style='margin:10px; background-size: cover;' src='images/Font Header.png' width=200 height=200></img>
     The header to a font file tells the game where to find the sprite sheet and spacing definitions. The sprite sheet
     and spacing definitions work together to define how the characters get presented to the screen. On the PC version of
     the game, for latin based languages, there also appears to be extra data in the header that has an unknown purpose.
-    <sup>(suggest an edit)</sup>\n\n
+    <sup>(suggest an edit)</sup><br><br><br><br><br><br>\n
     "
     references: {
       where to find: "#sprite-sheet-offset",
       sprite sheet: "#sprite-sheet",
       spacing definitions: "#spacing-definitions",
-      suggest and edit: "",
+      suggest an edit: "https://github.com/Zatarita/re4-wiki/issues/new?title=update-FNT-Unknown",
       unknown purpose: "#unknown"
+    }
+  Sprite Sheet:
+    text: "
+    <img align='left' style='margin:10px' src='images/example.png' width=200 height=200></img>
+    The sprite sheet is a texture used by the game that holds the actual pixel data that makes up the font symbols. There are multiple sprite
+    sheets used throughout the game for multiple languages. By spltiting up the sprite sheet this way languages that have thousands of symbols,
+    such as Japanese or Chinese, can be narrowed down to only contain the symbols required for their inteded purpose.\n
+    <br><br>
+    Some symbols don't represent a number or letter, but represent a button a player can press. These are called during quicktime events/
+    'how to play' manuals. Some of these symbols span two cells of a sprite sheet. In this case the font spacing is used to stitch the two
+    cells together.
+    <br><br>
+    <br><br>
+    <br><br>\n
+    "
+    references: {
+      texture: "tpl.md",
+      font spacing: "#font-spacing"
     }
   Font Spacing:
     text: "
-    <img align='right' style='margin:10px; background-size: cover;' src='images/Font Spacing.png' width=200 height=200></img>
+    <img align='right' style='margin:10px' src='images/Font Spacing.png' width=200 height=200></img>
     The font spacing determines the margins of the font lettering. There are two bytes that determine the distance from the start
     of the sprite sheet's cell, and the length in pixels till the end of the symbol. These two pieces work together to 'cut' the symbol
-    out of the sprite sheet. Typically these values add together to the full cell size. (which can varry from sprite sheet to sprite sheet)
-    Though, the symbol can use less than the full cell periodically.\n<br><br><br><br><br>
+    out of the sprite sheet. Typically these values add together to the full cell size. (which can vary from sprite sheet to sprite sheet)
+    Though, the symbol can use less than the full cell periodically.\n<br><br>
+    Some font symbols span two cells. In this case the length can be extended to include the two symbols as one.
+    <br><br><br><br><br>
     "
     references: {
       distance from the start: "#left-margin",
