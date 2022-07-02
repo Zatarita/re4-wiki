@@ -11,7 +11,7 @@ structure:
     type: uint32_t
     comments: The offset that points to the start of the font spacing definitions.
     references: {
-      font spacing definitions: "#font-spacing"
+      font spacing definitions: "#font-spacing-1"
       }
 
   Unknown:
