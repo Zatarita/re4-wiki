@@ -26,7 +26,7 @@
 | <span id='height'>Height</span> | uint32_t   |  |  | Height of the texture in pixels. |
 | <span id='width'>Width</span> | uint32_t   |  |  | Width of the texture in pixels. |
 | <span id='format'>Format</span> | enum : uint32_t  | {I4: 0, I8: 1, I4A4: 2, I8A8: 3, R5G6B5: 4, R4G5B4A3: 5, R8G8B8A8: 6, P4: 8, P8: 9, P16: 10, CMPR: 14} |  | The format of the pixel data. |
-| <span id='texture-data-address'>Texture Data Address</span> | uint32_t   |  |  | On PC this [points to data](#imagepack-reference) that tells the game which [Texture Index](#imagepack-index) to use from a specified [ImagePack ID](#imagepack-id). On console this address points to the raw pixel data. |
+| <span id='texture-data-address'>Texture Data Address</span> | uint32_t   |  |  | On PC this points to an [ImagePack Reference](#imagepack-reference) that tells the game which [Texture Index](#imagepack-index) to use from a specified [ImagePack ID](#imagepack-id). On console this address points to the raw pixel data. |
 | <span id='wraps'>WrapS</span> | uint32_t   |  |  |  |
 | <span id='wrapt'>WrapT</span> | uint32_t   |  |  |  |
 | <span id='min-filter'>Min Filter</span> | uint32_t   |  |  |  |

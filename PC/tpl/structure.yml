@@ -63,10 +63,10 @@ structure:
    comments: The format of the pixel data.
   Texture Data Address:
    type: uint32_t
-   comments: On PC this points to data that tells the game which Texture Index to use from a specified ImagePack ID. On console this address points to the raw pixel data.
+   comments: On PC this points to an ImagePack Reference that tells the game which Texture Index to use from a specified ImagePack ID. On console this address points to the raw pixel data.
    references: {
     Texture Index: "#imagepack-index",
-    points to data: "#imagepack-reference",
+    ImagePack Reference: "#imagepack-reference",
     ImagePack ID: "#imagepack-id"
    }
   WrapS:
