@@ -37,10 +37,7 @@ children:
     <br><br>
     Some symbols don't represent a number or letter, but represent a button a player can press. These are called during quicktime events/
     'how to play' manuals. Some of these symbols span two cells of a sprite sheet. In this case the font spacing is used to stitch the two
-    cells together.
-    <br><br>
-    <br><br>
-    <br><br>\n
+    cells together.\n
     "
     references: {
       texture: "tpl.md",
