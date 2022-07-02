@@ -32,7 +32,7 @@ children:
     text: "
     <img align='left' style='margin:10px' src='images/example.png' width=200 height=200></img>
     The sprite sheet is a texture used by the game that holds the actual pixel data that makes up the font symbols. There are multiple sprite
-    sheets used throughout the game for multiple languages. By spltiting up the sprite sheet this way languages that have thousands of symbols,
+    sheets used throughout the game for multiple languages. By spltiting up the sprite sheet this way; languages that have thousands of symbols,
     such as Japanese or Chinese, can be narrowed down to only contain the symbols required for their inteded purpose.\n
     <br><br>
     Some symbols don't represent a number or letter, but represent a button a player can press. These are called during quicktime events/
