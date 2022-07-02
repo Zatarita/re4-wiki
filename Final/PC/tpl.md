@@ -52,3 +52,9 @@
 | :- | :- | :-: | :- | :- |
 | <span id='imagepack-id'>ImagePack ID</span> | uint32_t   |  |  | A reference to the ImagePack used in the PC version of the game that holds a collection of textures. The ImagePack ID in hex **is** the name of the file found in *ImagePackHD/0x_______" |
 | <span id='imagepack-index'>ImagePack Index</span> | uint32_t   |  |  | Since the ImagePack can contain multiple textures, this specifiies which texture to use from the ImagePack. |
+### *Notes*
+
+
+| <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
+| :- | :- | :-: | :- | :- |
+| <span id='thanks!'>Thanks!</span> |     |  |  |  |
