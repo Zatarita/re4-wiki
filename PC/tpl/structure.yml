@@ -112,10 +112,13 @@ structure:
    type: uint32_t
    comments: Since the ImagePack can contain multiple textures, this specifiies which texture to use from the ImagePack.
 
- Notes:
-  Thanks!:
+ Thanks!:
+  MarioKart64n:
    type: " "
-   comment: Special thanks to the MarioKart community sharing their knowledge on the console formats.
+   comments: Special thanks to MarioKart64n for sharing their knowledge on the PC version and how it connects to the console versions.
+  Custom Mario Kart Wiiki:
+   type: " "
+   comments: Special thanks to the MarioKart community sharing their knowledge on the console formats.
    references: {
     MarioKart: https://wiki.tockdom.com/wiki/TPL_(File_Format)
    }

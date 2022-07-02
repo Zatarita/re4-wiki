@@ -52,9 +52,10 @@
 | :- | :- | :-: | :- | :- |
 | <span id='imagepack-id'>ImagePack ID</span> | uint32_t   |  |  | A reference to the ImagePack used in the PC version of the game that holds a collection of textures. The ImagePack ID in hex **is** the name of the file found in *ImagePackHD/0x_______" |
 | <span id='imagepack-index'>ImagePack Index</span> | uint32_t   |  |  | Since the ImagePack can contain multiple textures, this specifiies which texture to use from the ImagePack. |
-### *Notes*
+### *Thanks!*
 
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
-| <span id='thanks!'>Thanks!</span> |     |  |  |  |
+| <span id='mariokart64n'>MarioKart64n</span> |     |  |  | Special thanks to MarioKart64n for sharing their knowledge on the PC version and how it connects to the console versions. |
+| <span id='custom-mario-kart-wiiki'>Custom Mario Kart Wiiki</span> |     |  |  | Special thanks to the [MarioKart](https://wiki.tockdom.com/wiki/TPL_(File_Format)) community sharing their knowledge on the console formats. |
