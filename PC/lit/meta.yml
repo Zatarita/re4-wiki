@@ -1,0 +1,18 @@
+type: Filetype
+name: lit
+out: PC/
+tags: []
+version: ["All"]
+extension: [".lit"]
+dependencies: {
+}
+
+tools: ["SoP - Toolset"]
+endianness: [little, big]
+
+image: null
+compression: null
+structure: PC/lit/structure.yml
+body: [PC/lit/body.yml]
+
+references: [udas]

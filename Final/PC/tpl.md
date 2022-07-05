@@ -1,7 +1,7 @@
 # TPL File
 
 ## Summary
- 
+ The TPL File is a filetype that see's a lot of variation between versions. This page is related to the UHD release of the game.<sup>(disambiguation)</sup> 
 ## Structure
 ### *Header*
 

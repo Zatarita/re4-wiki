@@ -1,0 +1,434 @@
+structure:
+ Header:
+  Count:
+   type: uint16_t
+   comments: Number of Light Groups contained in the LIT
+  Unknown:
+   type: array
+   subtype: Byte
+   size: 2
+  Light Group Offsets:
+   type: array
+   subtype: uint32_t
+   size: Count
+   comments: The offsets pointing to the start of each Light Group
+
+ Light Group:
+  Parent:
+   type: Light Group Properties
+   comments: Global settings for the current LIT. Also holds Fog, Wind, and Blur settings
+  Light Entry:
+   type: array
+   subtype: Light Group Entry
+   size: n
+   comments: The definition for each light in the light group.
+
+ Light Group Properties:
+  Scroll Lighting:
+   type: Color R8G8B8A8
+   comments: Ambient light color for "Scroll" objects.
+  Unknown:
+   type: array
+   subtype: Byte
+   size: 4
+  Fog Type:
+   type: enum
+   subtype: Byte
+   options: {
+    None : 0, 
+    Linear : 2, 
+    Exponential : 4,
+    Exponential 2 : 5, 
+    Reverese Exponential : 6, 
+    Reverse Exponential 2 : 7
+   }
+   comments: Method used to calculate the fog density.
+  Fog Start:
+   type: Float
+   comments: Near plane for fog to start at.
+  Fog End:
+   type: Float
+   comments: Beyond the end point fog no longer becomes more dense.
+  Fog Color:
+   type: Color R8G8B8A8
+   comments: Controls the fog color.
+
+  Padding:
+   type: array
+   subtype: Byte
+   size: 3
+  
+  Mirror Fog Type:
+   type: enum
+   subtype: Byte
+   options: {
+    None : 0, 
+    Linear : 2, 
+    Exponential : 4,
+    Exponential 2 : 5, 
+    Reverese Exponential : 6, 
+    Reverse Exponential 2 : 7
+   }
+  Mirror Fog Start:
+   type: Float
+   comments: Near plane; Where fog to starts.
+  Mirror Fog End:
+   type: Float
+   comments: Beyond the end point fog no longer becomes more dense.
+  Mirror Fog Color:
+   type: Color R8G8B8A8
+   comments: Controls the mirror fog color. (Research needed)
+  Focus Distance:
+   type: uint32_t
+   comments: Sets the blur focal distance.
+  Focus Level:
+   type: uint16_t
+   comments: Sets the blur iterations.
+  Focus Mode:
+   type: enum
+   subtype: Byte
+   options: {
+    Near: 0,
+    Far: 1,
+    Follow Player Near: 2,
+    Follow Player Far: 3
+   }
+  Blur Rate:
+   type: Byte
+
+  LIT Tuning Target:
+   type: Byte
+   comments: Determines if the game uses the Core or the Room lit for ambient tuning.
+  Room Light Tuning Color:
+   type: Color R8G8B8A8
+   comments: Adjusts the light colors for each child light group in the room.
+  Room Ambient Tuning Color:
+   type: Color R8G8B8A8
+   comments: Adjusts the light colors for each child light group in the room.
+  Room Effect Tuning Color:
+   type: Color R8G8B8A8
+   comments: Adjusts the light colors for each child light group in the room.
+  Model Tev Scale Multiplier:
+   type: enum
+   subtype: Byte
+   options: {
+    1x: 0,
+    2x: 1,
+    4x: 2
+   }
+   comments: Model lighting multiplier.
+  Player Tev Scale Multiplier:
+   type: enum
+   subtype: Byte
+   options: {
+    1x: 0,
+    2x: 1,
+    4x: 2
+   }
+  "Padding ":
+   type: array
+   subtype: Byte
+   size: 2
+  Far Play:
+   type: Float
+   comments: Adjusts how the game culls distant objects.
+  Hokan:
+   type: Byte
+  "Unknown ":
+   type: array
+   size: 0xA4
+   subtype: Byte
+  Wind Direction:
+   type: Byte
+   comments: Wind direction. (0x80 = π = 180°; 0xFF = 2π = 360°)
+  Wind Power:
+   type: Byte
+   comments: Wind Power (1 = 0.20 units)
+  Wind Frequency:
+   type: Byte
+   comments: Frequency of "gusts" of wind. (1 = 0.01 units)
+  "Padding  ":
+   type: Byte
+  Blur Type:
+   type: enum
+   subtype: Byte
+   options: {
+    Normal: 0,
+    Spread: 1,
+    Add: 2
+   }
+   comments: Blur type used by the game filter.
+  Blur Power:
+   type: Byte
+   comments: Strength of the blur.
+  Mipmap Min LOD:
+   type: Byte
+   comments: Sets the minimum LOD state of objects in the LIT 
+   options: Must be less than the Mipmap Max LOD level
+  Mipmap Max LOD:
+   type: Byte
+   comments: Sets the maximum LOD state of objects in the LIT
+   options: Must be greater than the Mipmap Max LOD level
+  Anisotropic Filter Format:
+   type: enum
+   subtype: Byte
+   options: {
+    GX_ANISO_1: 0,
+    GX_ANISO_2: 1,
+    GX_ANISO_4: 2
+   }
+   comments: Sets the Anisotropic Filtering format.
+  Contrast Level:
+   type: Byte
+   comments: Sets the contrast settings for the current Light Group.
+  Contrast Power:
+   type: Byte
+   comments: Sets the contrast power for the current Light Group. ** TODO ** Update this with something substantial
+  Contrast Bias:
+   type: Byte
+   comments: Adjusts the bias for the current Light Group settings. ** TODO ** Update this with something substantial
+  LOD Bias:
+   type: Byte
+   comments: biases the LOD settings one way or the other.
+  
+  Ambient Enemies And Objects Color:
+   type: Color R8G8B8A8
+   comments: Tunes the lighting towards enemies and objects for the light group.
+  Ambient Effects Color:
+   type: Color R8G8B8A8
+   comments: Tunes the lighting towards effects for the light group.
+
+ Light Group Entry:
+  Activated:
+   type: Byte
+   comments: Activated?  
+  Light Type:
+   type: enum
+   subtype: Byte
+   options: {
+    Constants: 0,
+    Linear: 1,
+    Quadratic: 2,
+    Spotlight: 3,
+    Custom: 4,
+    Parallel: 5,
+    Spot Quad: 6,
+    Local Ambient: 7
+   }
+  Light Attributes:
+   type: enum
+   subtype: Byte
+   options: {
+    Normal: 0,
+    Flicker: 1,
+    Wave: 2,
+    Spot Rotate: 3,
+    Shadow: 4,
+    Path: 5,
+    Fade: 6,
+    Shine: 7
+   }
+   comments: Controls attributes related to the light. 
+  Light Mask:
+   type: flag
+   subtype: Byte
+   options: {
+    Player: 1,
+    Enemy: 2,
+    Object: 4,
+    Effect: 8,
+    Ambient: 16,
+    Item: 32,
+    Sub Character: 64,
+    Thermo: 128
+   }
+   comments: Controls what objects are effected by the light entry.
+  Position:
+   type: array
+   subtype: Float
+   size: 3
+   comments: (X, Y, Z) location for the light.
+  Radius:
+   type: Float
+   comments: The extents of the lights reach.
+  Light Color:
+   type: R8G8B8A
+   comments: Emitted color from the light.
+  Intensity:
+   type: Float
+   comments: Intensity of the light emitted from the entry.
+  Parent:
+   type: enum
+   subtype: Byte
+   options: {
+    World: 0,
+    Enemy: 1,
+    Scroll: 2,
+    ETC Model: 3,
+    Object: 4
+   }
+   comments: Links the light's position to an entity's position in the scene.
+  Subgroup:
+   type: Byte
+   comments: Add's the light to a "layer" that can be toggled somehow **TODO**
+  Attributes:
+   type: enum
+   subtype: Byte
+   options: {
+    None: 0,
+    Ignore Tuning: 1,
+    Electric Light: 2,
+    Flashlight: 4
+   }
+   comments: Set's special attributes to influence how the light behaves.
+  Priority:
+   type: Byte
+   comments: Priority determines which lights get calculated when more than 6 lights are effecting an object.
+
+  Part/Bone Number:
+   type: Byte
+   comments: When a parent is set this controls bone gets used for parenting
+  Parent ID:
+   type: Byte
+   comments: When a parent is set this controls which index is selected from the requested entity.
+  
+  Light Type Parameter Area:
+   type: array
+   subtype: Bytes
+   size: 0x14
+   comments: This area has different parameters in it depending on the Light Type assigned. See below for each structure definition.
+
+  Unused:
+   type: array
+   subtype: bytes
+   size: 0x2C
+  
+  Light Attribute Parameter Area:
+   type: array
+   subtype: Bytes
+   size: 0x10
+   comments: This area has different parameters in it depending on the Light Attribute set. See below for each structure definition.
+
+  "Unused ":
+   type: array
+   subtype: Byte
+   size: 0xb0
+  
+ Light Type Constant:
+  Note:
+   type: " "
+   comments: There are no parameters for the constant light type.
+ Light Type Linear:
+  Note:
+   type: " "
+   comments: There are no parameters for the Linear light type.
+ Light type Quadratic:
+  Smooth Edge:
+   type: Float
+ Light Spot Light:
+  Position:
+   type: array
+   subtype: Float
+   size: 3
+   comments: (x, y, z) Position for the spot light
+  Range:
+   type: Float
+   comments: How far the spotlight can reach. Must be greater than 1
+   options: "> 1.0"
+  Smooth Edges:
+   type: Float
+ Light Local Ambient:
+  Smooth Edges:
+   type: Float
+  
+ Attribute Type Flicker:
+  Color:
+   type: R8G8B8A
+   comments: Color that is shifted between with the main color to create the flicker effect.
+  Range:
+   type: Float
+   comments: Intensity of the "flickering" effect
+ Attribute Type Wave:
+  Center: 
+   type: Float
+   comments: Adjusts the midpoint of the wave function.
+  Range:
+   type: Float
+   comments: Adjusts the spread of the wave function. Increates intensity.
+  Speed:
+   type: Float
+   comments: Adjusts the period of the wave function.
+  Position:
+   type: Float
+   comments: Current position of the wave function. Used by the game at runtime.
+ Attribute Type Rotate:
+  Rotation:
+   type: array
+   subtype: Float
+   size: 3
+   comments: Adjusts the X, Y Rotation of the light over time. Z parameter doesn't effect the final product.
+ Attribute Type Shadow:
+  Flags:
+   type: enum
+   subtype: Byte
+   options: {
+    No TEX: 0,
+    Use TEX: 1,
+    Invert TEX: 2
+   }
+   comments: If Shadow Type is anything but Normal, or Foot "Use TEX" must be true.
+  Shadow Type:
+   type: enum
+   subtype: Byte
+   options: {
+    Normal: 0,
+    Cast: 1,
+    Cast Add: 2,
+    Cast 2: 3,
+    Cast Add 2: 4,
+    Foot: 5
+   }
+   Ground Distance/TEX Number:
+    type: Byte
+    comments: If Shadow Type is Foot this value is a ground height. For all other types this is TEX Number.
+ Attribute Type Path:
+  Start:
+   type: uint32_t
+   comment: Starting offset in memory for the path.
+  Position:
+   type: uint32_t
+   comment: Pointer to the current position in the path in memory.
+  Flags:
+   type: enum
+   subtype: Byte
+   options: {
+    None: 0,
+    Loop: 1,
+    Inverse: 2
+   }
+   comments: Flags that augment how the path is processed.
+  Path Index:
+   type: byte
+   comments: When there are multiple sub paths in the current path being used. This specifies the index for the desired path.
+
+ Attribute Type Fade:
+  Start:
+   type: Float
+   comments: Starting point for the fade effect
+  Speed:
+   type: Float
+   comments: Speed upon which the light fades.
+
+ Attribute Type Shine:
+  Current Position:
+   type: array
+   subtype: Float
+   size: 3
+   comments: Used internally by the game to keep track of how far through the shine animation the current LIT entry is.
+
+  Speed:
+   type: array
+   subtype: Float
+   size: 3
+   comments: Determines how quickly the the shinning happens on each axis (except for the z axis)
+  
