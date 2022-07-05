@@ -21,16 +21,15 @@ structure:
    type: array
    subtype: Light Group Entry
    size: n
-   comments: The definition for each light in the light group.
+   comments: The definition for each light in the light group. Size is in the global Light Group Properties for the LIT.
 
  Light Group Properties:
   Scroll Lighting:
    type: Color R8G8B8A8
    comments: Ambient light color for "Scroll" objects.
-  Unknown:
-   type: array
-   subtype: Byte
-   size: 4
+  Light Count:
+   type: uint32_t
+   comments: Tells the game how many child entries are in the LIT file
   Fog Type:
    type: enum
    subtype: Byte

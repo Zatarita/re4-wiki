@@ -16,14 +16,14 @@
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | <span id='parent'>Parent</span> | Light Group Properties   |  |  | Global settings for the current LIT. Also holds Fog, Wind, and Blur settings |
-| <span id='light-entry'>Light Entry</span> | array : Light Group Entry [n] |  |  | The definition for each light in the light group. |
+| <span id='light-entry'>Light Entry</span> | array : Light Group Entry [n] |  |  | The definition for each light in the light group. Size is in the global Light Group Properties for the LIT. |
 ### *Light Group Properties*
 
 
 | <span style="display: inline-block; width:100px">Field</span> | <span style="display: inline-block; width:200px">Type</span> | <span style="display: inline-block; width:100px">Legal Values</span> | <span style="display: inline-block; width:100px">Default Value</span> | Comment |
 | :- | :- | :-: | :- | :- |
 | <span id='scroll-lighting'>Scroll Lighting</span> | Color R8G8B8A8   |  |  | Ambient light color for "Scroll" objects. |
-| <span id='unknown'>Unknown</span> | array : Byte [4] |  |  |  |
+| <span id='light-count'>Light Count</span> | uint32_t   |  |  | Tells the game how many child entries are in the LIT file |
 | <span id='fog-type'>Fog Type</span> | enum : Byte  | {None: 0, Linear: 2, Exponential: 4, Exponential 2: 5, Reverese Exponential: 6, Reverse Exponential 2: 7} |  | Method used to calculate the fog density. |
 | <span id='fog-start'>Fog Start</span> | Float   |  |  | Near plane for fog to start at. |
 | <span id='fog-end'>Fog End</span> | Float   |  |  | Beyond the end point fog no longer becomes more dense. |
